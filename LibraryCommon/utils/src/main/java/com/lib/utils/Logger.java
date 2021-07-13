@@ -10,7 +10,7 @@ import android.util.Log;
  * desc    :日志控制
  */
 public class Logger {
-    private static final String TAG = "Jetpack";
+    private static final String TAG = "Jectpack";
     private static boolean debug = false;
     private static boolean release = false;
 

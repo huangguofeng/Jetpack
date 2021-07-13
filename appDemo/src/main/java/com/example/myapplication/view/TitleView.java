@@ -32,9 +32,10 @@ public class TitleView extends BaseCustomView<TitleViewViewModel, TitleViewBindi
 
     @Override
     protected void onRootClick(View view) {
+        Logger.logDebug(Constant.TAG, "onRootClick ");
         if (!TextUtils.isEmpty(getViewModel().dataBean.url)) {
             // 跳转web activity
-            Logger.logDebug(Constant.TAG, "onRootClick ");
+            Logger.logDebug(Constant.TAG, "onRootClick 2");
         } else {
 
         }

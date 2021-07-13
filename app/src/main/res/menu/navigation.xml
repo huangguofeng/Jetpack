@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/activity_main_id_init"
+        android:icon="@drawable/activity_main_navigation_bg_init"
+        android:title="@string/activity_main_navigation_init" />
+    <item
+        android:id="@+id/activity_main_id_advert"
+        android:icon="@drawable/activity_main_navigation_bg_advert"
+        android:title="@string/activity_main_navigation_advert" />
+    <item
+        android:id="@+id/activity_main_id_account"
+        android:icon="@drawable/activity_main_navigation_bg_account"
+        android:title="@string/activity_main_navigation_account" />
+    <item
+        android:id="@+id/activity_main_id_pay"
+        android:icon="@drawable/activity_main_navigation_bg_pay"
+        android:title="@string/activity_main_navigation_pay" />
+    <item
+        android:id="@+id/activity_main_id_setting"
+        android:icon="@drawable/activity_main_navigation_bg_setting"
+        android:title="@string/activity_main_navigation_setting" />
+</menu>

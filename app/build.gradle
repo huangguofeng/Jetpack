@@ -1,0 +1,160 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.1"
+    defaultConfig {
+        applicationId "com.hgf.jetpack"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    /**
+     * 视图绑定
+     * 忽略指定布局，在布局根目录添加 tools:viewBindingIgnore="true"
+     */
+    viewBinding {
+        enabled = true
+    }
+    /**
+     * 数据绑定
+     */
+//    dataBinding {
+//        enabled = true
+//    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.airbnb.android:lottie:3.4.1'
+    implementation 'com.tencent:mmkv-static:1.2.1'
+    implementation 'com.google.android.material:material:1.1.0'
+//    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.preference:preference:1.1.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    /**
+     * jetpack 基础：kotlin appcompat aoto 检测 多dex 安全 测试 TV Wear
+     * jetpack 架构：数据绑定 生命周期管理 LiveData 导航 分页 Room ViewModel WorkManager
+     * jetpack 行为：CameraX 下载管理器 媒体和播放 通知 权限 偏好设置 共享 切片
+     * jetpack 界面：动画和过渡 表情符号 Fragment 布局 调色板
+     */
+
+    /**
+     * jetpack 基础
+     */
+    // multidex 组件库
+    def multidex_version = "2.0.1"
+    implementation "androidx.multidex:multidex:$multidex_version"
+
+    // appcompat 组件库
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+
+    /**
+     * jetpack 架构
+     */
+    // ViewModel 和 LiveData 组件库
+    // 必选项
+    def lifecycle_version = "2.2.0"
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+    // Lifecycles only (without ViewModel or LiveData)
+    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
+    // Saved state module for ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+
+    // Annotation processor 注解处理器 二选一
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+//     alternately - if using Java8, use the following instead of lifecycle-compiler
+//     implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+
+    // 可选项
+    // 可选 - helpers for implementing LifecycleOwner in a Service
+//    implementation "androidx.lifecycle:lifecycle-service:$lifecycle_version"
+    // 可选 - ProcessLifecycleOwner provides a lifecycle for the whole application process
+    implementation "androidx.lifecycle:lifecycle-process:$lifecycle_version"
+    // 可选 - ReactiveStreams support for LiveData
+//    implementation "androidx.lifecycle:lifecycle-reactivestreams:$lifecycle_version"
+
+    // Navigation 导航栏组件库
+    def nav_version = "2.3.0"
+    // 必选 Java language implementation
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
+    implementation "androidx.navigation:navigation-ui:$nav_version"
+    // Dynamic Feature Module Support 会引发ktx库出来
+//    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+
+    // paging 分页组件库
+    def paging_version = "2.1.2"
+    // 必选
+//    implementation "androidx.paging:paging-runtime:$paging_version"
+    // 可选 - RxJava support
+//    implementation "androidx.paging:paging-rxjava2:$paging_version" // For Kotlin use paging-rxjava2-ktx
+
+    // Room组件库
+    def room_version = "2.2.5"
+    // 必选
+//    implementation "androidx.room:room-runtime:$room_version"
+//    annotationProcessor "androidx.room:room-compiler:$room_version"
+//     可选 - RxJava support for Room
+//    implementation "androidx.room:room-rxjava2:$room_version"
+
+    // WorkManager 组件库
+    def work_version = "2.3.4"
+    // 必选 (Java only)
+//    implementation "androidx.work:work-runtime:$work_version"
+    // 可选 - RxJava2 support
+//    implementation "androidx.work:work-rxjava2:$work_version"
+
+    /**
+     * jetpack 行为库
+     */
+    // CameraX 相机
+    def camerax_version = "1.0.0-beta05"
+//    implementation "androidx.camera:camera-camera2:${camerax_version}"
+//    // If you want to use the CameraX View class
+//    implementation "androidx.camera:camera-view:1.0.0-alpha12"
+//    // If you want to use the CameraX Extensions library
+//    implementation "androidx.camera:camera-extensions:1.0.0-alpha12"
+//    // If you want to use the CameraX Lifecycle library
+//    implementation "androidx.camera:camera-lifecycle:${camerax_version}"
+
+    // media 媒体支持
+//    implementation 'androidx.media:media:1.2.+'
+
+    // 通知库 已包含在androidx.core：core
+    // 权限 已包含在androidx.core：core
+    // 偏好设置 忽略
+    // 共享 ：系统分享
+    // 切片 ：系统分享
+    /**
+     * jetpack 界面库
+     */
+    // 动画
+
+//    // 表情包 组件库
+//    implementation 'androidx.emoji:emoji:1.1.0'
+//    // 表情包 appcompat微件库
+//    implementation 'androidx.emoji:emoji-appcompat:1.1.0'
+//    // 表情包 捆绑字体
+//    implementation 'androidx.emoji:emoji-bundled:1.1.0'
+
+    // 调色板
+//    implementation 'androidx.palette:palette:1.0.0'
+
+    // constraintlayout 布局
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+}

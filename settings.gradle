@@ -1,0 +1,20 @@
+rootProject.name = 'Jetpack'
+
+//include ':app'
+include ':appDemo'
+//include ':appRoomDemo'
+//include ':javaLib'
+
+/**
+ * common
+ */
+include 'LibraryCommon:base'
+include 'LibraryCommon:common'
+include 'LibraryCommon:http'
+include 'LibraryCommon:utils'
+
+/**
+ * JectPack 暂未使用组件
+ */
+include 'JectPack:room'
+include 'JectPack:work'

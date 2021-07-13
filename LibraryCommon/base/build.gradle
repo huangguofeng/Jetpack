@@ -16,19 +16,17 @@ android {
     }
 
     buildTypes {
-        buildTypes {
-            release {
-                minifyEnabled false
-                buildConfigField "String", "VERSION_NAME", "\"" + VERSION + "\""
-                buildConfigField "int", "VERSION_CODE", VERSION_CODE
-                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            }
-            debug {
-                minifyEnabled false
-                buildConfigField "String", "VERSION_NAME", "\"" + VERSION + "\""
-                buildConfigField "int", "VERSION_CODE", VERSION_CODE
-                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            }
+        release {
+            minifyEnabled false
+            buildConfigField "String", "VERSION_NAME", "\"" + VERSION + "\""
+            buildConfigField "int", "VERSION_CODE", VERSION_CODE
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            buildConfigField "String", "VERSION_NAME", "\"" + VERSION + "\""
+            buildConfigField "int", "VERSION_CODE", VERSION_CODE
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {

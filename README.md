@@ -1,2 +1,36 @@
-# Jetpack
-Jetpack组件使用
+Jetpack应用实践：
+1 Base                  生命周期模块
+2 Utils                 工具类
+3 Work                  后台任务
+4 Http                  网络请求
+5 Room                  数据库
+6 SwipeRefreshLayout    下拉刷新
+7 ViewPager2            轮播
+8 SlidingPaneLayout     侧滑菜单
+9 Security              数据加密
+10 Recyclerview         瀑布流
+11 Preference           设置
+12 Paging               分页库
+13 Navigation           导航
+14 Media2               媒体
+15 Hilt                 依赖注入
+16 GridLayout           网格布局
+17 Games                安卓游戏
+18 Fragment             碎片
+19 EmoJi                表情包
+21 DynamicAnimation     弹跳动画
+22 DrawerLayout         Material Design抽屉式导航栏
+23 MMKV                 储存
+24 DataBinding          数据绑定
+25 CardView             卡片
+26 CameraX              相机
+27 Transition           动画
+28 VectorDrawable       矢量图
+29 Palette              调色板
+30 Biometric            生物识别，指纹密码等
+31 Appcompat            外观和风格
+32 ConstraintLayout     约束布局
+33 Webkit               管理webView
+34 NotificationCompat   通知
+34 LiveData             活性数据
+34 LayoutBinding        布局绑定

@@ -3,7 +3,7 @@ rootProject.name = 'Jetpack'
 //include ':app'
 include ':appDemo'
 //include ':appRoomDemo'
-//include ':javaLib'
+include ':javaLib'
 
 /**
  * common

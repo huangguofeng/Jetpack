@@ -4,7 +4,7 @@ package com.lib.java.builder;
  * @author :huangguofeng
  * date    :2021/7/17
  * package :com.lib.java.builder
- * desc    :建造者模式
+ * desc    :建造者模式,简化模式
  */
 public class Computer {
     private String name = null;

@@ -27,4 +27,7 @@ public class SingleD {
         private static SingleD singleD = new SingleD();
     }
 
+    public void print(String s){
+        System.out.println("SingleD: "+s);
+    }
 }

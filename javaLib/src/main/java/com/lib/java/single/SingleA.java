@@ -14,4 +14,7 @@ public class SingleA {
         return singleA;
     }
 
+    public void print(String s){
+        System.out.println("SingleA: "+s);
+    }
 }

@@ -25,4 +25,7 @@ public class SingleC {
         return singleC;
     }
 
+    public void print(String s){
+        System.out.println("SingleC: "+s);
+    }
 }

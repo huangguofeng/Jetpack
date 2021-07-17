@@ -21,4 +21,7 @@ public class SingleB {
         return singleB;
     }
 
+    public void print(String s){
+        System.out.println("SingleB: "+s);
+    }
 }

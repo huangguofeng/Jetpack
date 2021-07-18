@@ -3,7 +3,7 @@ package com.lib.java.builder;
 /**
  * @author :huangguofeng
  * date    :2021/7/17
- * package :com.lib.java.single
+ * package :com.lib.java.builder
  * desc    :建造者模式demo
  * 1：使用多个简单的对象一步一步构建成一个复杂的对象
  * 2：将一个复杂的构建与其表示相分离，使得同样的构建过程（builder抽象类定义的方法）可以创建不同的表示（不同的子继承类）

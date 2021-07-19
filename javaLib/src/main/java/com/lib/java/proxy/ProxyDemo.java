@@ -19,6 +19,8 @@ public class ProxyDemo {
 //        proxy.sale();
 //        int number = proxy.getMoney(1000);
 //        System.out.println(number);
+        //配置系统属性为true,代理类生成时将自动写入磁盘
+        System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
         main2(args);
     }
 

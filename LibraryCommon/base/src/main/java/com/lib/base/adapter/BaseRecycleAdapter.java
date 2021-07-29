@@ -27,9 +27,9 @@ public abstract class BaseRecycleAdapter<T extends BaseViewModel> extends Recycl
         notifyDataSetChanged();
     }
 
+
     @NonNull
     @Override
-
     public BaseRecycleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new BaseRecycleViewHolder(getCustomView(parent.getContext()));
     }

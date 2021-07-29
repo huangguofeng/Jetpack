@@ -73,7 +73,7 @@ public class Fragment1 extends Fragment {
         view.findViewById(R.id.tv).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(requireActivity(), MainActivity2.class);
+                Intent intent = new Intent(requireActivity(), MainActivity1.class);
                 startActivityForResult(intent, 100);
             }
         });

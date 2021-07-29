@@ -15,6 +15,8 @@ import com.airbnb.lottie.LottieDrawable;
 import com.airbnb.lottie.LottieOnCompositionLoadedListener;
 import com.lib.utils.Logger;
 
+import java.net.HttpURLConnection;
+
 /**
  * @author huangguofeng
  */
@@ -28,7 +30,7 @@ public class WelcomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_frame);
         lottie = findViewById(R.id.lottie);
         skip = findViewById(R.id.skip);
-
+        HttpURLConnection connection;
         lottie.addAnimatorListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {

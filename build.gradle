@@ -34,8 +34,8 @@ ext {
             /**
              * JectPack组件库
              */
-            room        : project(':JectPack:room'),
-            work        : project(':JectPack:work'),
+            room  : project(':JectPack:room'),
+            work  : project(':JectPack:work'),
             /**
              * Common基础业务组件
              */
@@ -62,7 +62,7 @@ ext {
 
     appcompat = '1.2.0'
     recyclerview = '1.1.0'
-    constraintLayout = '2.0.4'
+    constraintlayout = '2.0.1'
     material = '1.2.1'
     viewpager2 = '1.0.0'
 

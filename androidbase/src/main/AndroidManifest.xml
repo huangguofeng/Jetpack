@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Jetpack">
-        <activity android:name=".surfaceview.SurfaceMainActivity"></activity>
+        <activity android:name=".textureview.TextureViewActivity"></activity>
+        <activity android:name=".surfaceview.SurfaceMainActivity" />
         <activity android:name=".recycle.RecycleViewMainActivity" />
         <activity android:name=".WelcomeActivity">
             <intent-filter>

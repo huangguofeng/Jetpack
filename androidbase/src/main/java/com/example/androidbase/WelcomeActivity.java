@@ -13,7 +13,7 @@ import com.airbnb.lottie.LottieAnimationView;
 import com.airbnb.lottie.LottieComposition;
 import com.airbnb.lottie.LottieDrawable;
 import com.airbnb.lottie.LottieOnCompositionLoadedListener;
-import com.example.androidbase.surfaceview.SurfaceMainActivity;
+import com.example.androidbase.textureview.TextureViewActivity;
 import com.lib.utils.Logger;
 
 import java.net.HttpURLConnection;
@@ -89,6 +89,6 @@ public class WelcomeActivity extends AppCompatActivity {
     }
 
     private void goMain() {
-        startActivity(new Intent(WelcomeActivity.this, SurfaceMainActivity.class));
+        startActivity(new Intent(WelcomeActivity.this, TextureViewActivity.class));
     }
 }

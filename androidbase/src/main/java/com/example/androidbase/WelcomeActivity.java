@@ -13,6 +13,7 @@ import com.airbnb.lottie.LottieAnimationView;
 import com.airbnb.lottie.LottieComposition;
 import com.airbnb.lottie.LottieDrawable;
 import com.airbnb.lottie.LottieOnCompositionLoadedListener;
+import com.example.androidbase.recycle.RecycleViewMainActivity;
 import com.lib.utils.Logger;
 
 import java.net.HttpURLConnection;
@@ -40,14 +41,14 @@ public class WelcomeActivity extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 Logger.logInfo("onAnimationEnd");
-                startActivity(new Intent(WelcomeActivity.this, MainActivity1.class));
+                goMain();
                 WelcomeActivity.this.finish();
             }
 
             @Override
             public void onAnimationCancel(Animator animation) {
                 Logger.logInfo("onAnimationCancel");
-                startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
+                goMain();
                 WelcomeActivity.this.finish();
             }
 
@@ -85,5 +86,9 @@ public class WelcomeActivity extends AppCompatActivity {
                 lottie.cancelAnimation();
             }
         });
+    }
+
+    private void goMain() {
+        startActivity(new Intent(WelcomeActivity.this, RecycleViewMainActivity.class));
     }
 }

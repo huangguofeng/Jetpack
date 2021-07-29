@@ -18,3 +18,4 @@ include 'LibraryCommon:utils'
  */
 include 'JectPack:room'
 include 'JectPack:work'
+include ':androidbase'

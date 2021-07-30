@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:simple="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.androidbase.view.SimpleTagImageView
+        android:id="@+id/stiv"
+        android:layout_margin="18dp"
+        android:layout_width="300dp"
+        android:layout_height="280dp"
+        android:src="@mipmap/image1"
+        simple:simple_tag_textSize="18sp"
+        simple:simple_corner_distance="30dp"
+        simple:simple_tag_text="AB"
+        simple:simple_tag_background_color="#af27CDC0"
+        simple:simple_tag_orientation="left_bottom"
+        simple:simple_tag_width="20dip"
+        simple:simple_tag_textColor="@android:color/white"
+        simple:simple_tag_enable="true"
+        simple:simple_tag_round_radius="20dp"
+        simple:simple_tag_textStyle="NORMAL" />
+</LinearLayout>

@@ -81,6 +81,7 @@ public class BitmapActivity extends AppCompatActivity {
                 imageView2.setImageBitmap(compressOptionsRGB(R.mipmap.baobao1));
             }
         });
+        compressSize(getBitmap(R.mipmap.dnf));
     }
 
 
@@ -108,7 +109,8 @@ public class BitmapActivity extends AppCompatActivity {
     private Bitmap getBitmap(int id) {
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), id);
         Logger.logInfo("压缩前图片的大小" + (bitmap.getByteCount() / 1024 / 1024)
-                + "M宽度为" + bitmap.getWidth() + "高度为" + bitmap.getHeight());
+                + "M宽度为" + bitmap.getWidth() + "高度为" + bitmap.getHeight()
+                + "单位像素占用字节数：" + bitmap.getByteCount() / bitmap.getWidth() / bitmap.getHeight());
         return bitmap;
     }
 
@@ -127,7 +129,8 @@ public class BitmapActivity extends AppCompatActivity {
             Bitmap bitmap1 = BitmapFactory.decodeStream(isBm);
             Logger.logInfo("压缩后图片的大小" + (bitmap1.getByteCount() / 1024 / 1024)
                     + "M宽度为" + bitmap1.getWidth() + "高度为" + bitmap1.getHeight()
-                    + "bytes.length=  " + (bytes.length / 1024) + "KB");
+                    + "bytes.length=  " + (bytes.length / 1024) + "KB "
+                    + "单位像素占用字节数：" + bitmap1.getByteCount() / bitmap1.getWidth() / bitmap1.getHeight());
             return bitmap1;
         } catch (OutOfMemoryError e) {
             e.printStackTrace();
@@ -147,22 +150,24 @@ public class BitmapActivity extends AppCompatActivity {
     // 采样率压缩
     public Bitmap compressOptions(int id) {
         BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inSampleSize = 2;
+        options.inSampleSize = 4;
         Bitmap bitmap1;
         bitmap1 = BitmapFactory.decodeResource(getResources(), id, options);
         Logger.logInfo("压缩后图片的大小" + (bitmap1.getByteCount() / 1024 / 1024)
-                + "M宽度为" + bitmap1.getWidth() + "高度为" + bitmap1.getHeight());
+                + "M宽度为" + bitmap1.getWidth() + "高度为" + bitmap1.getHeight()
+                + "单位像素占用字节数：" + bitmap1.getByteCount() / bitmap1.getWidth() / bitmap1.getHeight());
         return bitmap1;
     }
 
     // 缩放压缩
     public Bitmap compressMatrix(Bitmap bit) {
         Matrix matrix = new Matrix();
-        matrix.setScale(0.1f, 0.1f);
+        matrix.setScale(0.2f, 0.2f);
         Bitmap bm = Bitmap.createBitmap(bit, 0, 0, bit.getWidth(),
                 bit.getHeight(), matrix, true);
         Logger.logInfo("压缩后图片的大小" + (bm.getByteCount() / 1024 / 1024)
-                + "M宽度为" + bm.getWidth() + "高度为" + bm.getHeight());
+                + "M宽度为" + bm.getWidth() + "高度为" + bm.getHeight()
+                + "单位像素占用字节数：" + bm.getByteCount() / bm.getWidth() / bm.getHeight());
         return bm;
     }
 
@@ -172,7 +177,17 @@ public class BitmapActivity extends AppCompatActivity {
         options2.inPreferredConfig = Bitmap.Config.RGB_565;
         Bitmap bm = BitmapFactory.decodeResource(getResources(), id, options2);
         Logger.logInfo("压缩后图片的大小" + (bm.getByteCount() / 1024 / 1024)
-                + "M宽度为" + bm.getWidth() + "高度为" + bm.getHeight());
+                + "M宽度为" + bm.getWidth() + "高度为" + bm.getHeight()
+                + "单位像素占用字节数：" + bm.getByteCount() / bm.getWidth() / bm.getHeight());
+        return bm;
+    }
+
+    // 创建指定大小图片进行压缩
+    public Bitmap compressSize(Bitmap bitmap) {
+        Bitmap bm = Bitmap.createScaledBitmap(bitmap, 1000, 1000, true);
+        Logger.logInfo("压缩后图片的大小" + (bm.getByteCount() / 1024 / 1024)
+                + "M宽度为" + bm.getWidth() + "高度为" + bm.getHeight()
+                + "单位像素占用字节数：" + bm.getByteCount() / bm.getWidth() / bm.getHeight());
         return bm;
     }
 

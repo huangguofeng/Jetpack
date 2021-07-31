@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        tools:context=".imagechange.BitmapActivity">
+
+
+        <ImageView
+            android:id="@+id/image1"
+            android:src="@mipmap/image0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/image2"
+            android:src="@mipmap/image1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:text="质量压缩"
+            android:id="@+id/ys1"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/ys2"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:text="采样率压缩"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:text="缩放法压缩"
+            android:id="@+id/ys3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:text="RGB565压缩"
+            android:id="@+id/ys4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</ScrollView>

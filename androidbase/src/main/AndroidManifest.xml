@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Jetpack">
-        <activity android:name=".step.StepVertialActivity"></activity>
+        <activity android:name=".imagechange.BitmapActivity"></activity>
+        <activity android:name=".step.StepVertialActivity" />
         <activity android:name=".step.StepActivity" />
         <activity android:name=".view.TagImageActivity" />
         <activity android:name=".textureview.TextureViewActivity" />

@@ -10,7 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Jetpack">
-        <activity android:name=".animation.AnimationActivity"></activity>
+        <activity android:name=".sqlite.SqliteActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".animation.AnimationActivity" />
 
         <receiver
             android:name=".receiver.MyReceiver2"
@@ -31,13 +38,9 @@
         <activity android:name=".textureview.TextureViewActivity" />
         <activity android:name=".surfaceview.SurfaceMainActivity" />
         <activity android:name=".recycle.RecycleViewMainActivity" />
-        <activity android:name=".WelcomeActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity
+            android:name=".WelcomeActivity"
+            android:theme="@style/StartTheme"></activity>
 
         <service
             android:name=".MyService"

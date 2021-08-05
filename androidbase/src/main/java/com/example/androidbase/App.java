@@ -13,10 +13,13 @@ import com.lib.utils.app.AppUtils;
  * desc    :
  */
 public class App extends BaseApplication {
+    private static Context context;
+
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         debug(this);
+        context = base;
     }
 
     private void debug(Context context) {
@@ -26,5 +29,9 @@ public class App extends BaseApplication {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static Context getContext() {
+        return context;
     }
 }

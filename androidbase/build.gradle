@@ -44,6 +44,13 @@ configurations.all {
     resolutionStrategy.cacheDynamicVersionsFor 15, 'minutes'
 }
 
+greendao {
+    schemaVersion 1 //数据库版本号
+    daoPackage 'db'// 设置DaoMaster、DaoSession、Dao 包名
+    targetGenDir 'src/main/java/com/example/androidbase/sqlite/greendao'
+//设置DaoMaster、DaoSession、Dao目录
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     api rootProject.ext.module.common

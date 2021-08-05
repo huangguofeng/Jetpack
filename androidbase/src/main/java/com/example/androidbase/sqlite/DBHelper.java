@@ -25,7 +25,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public SQLiteDatabase getInstance() {
         if (INSTANCE == null) {
-            INSTANCE = new DBHelper().getWritableDatabase();
+            INSTANCE = getWritableDatabase();
         }
         return INSTANCE;
     }
@@ -50,14 +50,17 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         Logger.logInfo("DBHelper 数据库onCreate");
         String createTable = "CREATE TABLE IF NOT EXISTS person(_id integer NOT NULL PRIMARY KEY AUTOINCREMENT,name text,age integer);";
-        String createTable2 = "CREATE TABLE IF NOT EXISTS person2(_id integer NOT NULL PRIMARY KEY AUTOINCREMENT,data blob);";
         //创建表
         db.execSQL(createTable);
-        db.execSQL(createTable2);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         Logger.logInfo("DBHelper 数据库onUpgrade");
+        //升级判断,如果再升级就要再加两个判断,从1到3,从2到3
+        if (oldVersion == 1 && newVersion == 2) {
+            db.execSQL("ALTER TABLE person ADD phone text;");
+        }
+
     }
 }

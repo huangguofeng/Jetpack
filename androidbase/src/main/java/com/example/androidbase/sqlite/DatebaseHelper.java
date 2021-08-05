@@ -3,6 +3,8 @@ package com.example.androidbase.sqlite;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.lib.utils.Logger;
+
 import java.util.List;
 
 /**
@@ -19,6 +21,8 @@ public abstract class DatebaseHelper {
             return db;
         }
         db = new DBHelper().getInstance();
+        Logger.logInfo(db.getPath());
+        Logger.logInfo(db.getMaximumSize() + "");
         return db;
     }
 
@@ -44,6 +48,7 @@ public abstract class DatebaseHelper {
             }
         }
         cursor.close();
+        closeDB();
         return false;
     }
 

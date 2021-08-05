@@ -28,7 +28,7 @@
         android:id="@+id/button4"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="50dp"
         android:text="删除" />
 
 
@@ -54,5 +54,31 @@
         android:id="@+id/button8"
         android:layout_width="100dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="50dp"
         android:text="删除2" />
+
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="查询3" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="添加3" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="更新3" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="删除3" />
 </LinearLayout>

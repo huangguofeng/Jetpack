@@ -2,15 +2,21 @@ package com.example.androidbase.thread;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.androidbase.R;
 import com.lib.utils.Logger;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 /**
  * @author huangguofeng
@@ -33,6 +39,9 @@ public class ThreadActivity extends AppCompatActivity {
         }
     };
 
+    private Handler handlerThread;
+    HandlerThread thread;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +63,18 @@ public class ThreadActivity extends AppCompatActivity {
             }
         });
 
+        //
+        thread = new HandlerThread("test");
+        thread.start();
+        handlerThread = new Handler(thread.getLooper(), new Handler.Callback() {
+            @Override
+            public boolean handleMessage(@NonNull Message msg) {
+                Logger.logInfo("自定义HandlerThread handleMessage方法执行了: " + msg.what);
+                return true;
+            }
+        });
+
+        handlerThread.sendEmptyMessage(0);
 
     }
 
@@ -76,9 +97,26 @@ public class ThreadActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        EventBus.getDefault().unregister(this);
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         // 移除回调和消息 避免内存泄露
         handler.removeCallbacksAndMessages(null);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onGetMessage(MessageWrap message) {
+        Toast.makeText(this, message.message, Toast.LENGTH_SHORT);
     }
 }

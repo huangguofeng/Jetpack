@@ -11,18 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Jetpack">
         <activity android:name=".sqlite.greendao.GreenDaoActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".sqlite.ormlite.OrmliteActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".sqlite.SqliteActivity"></activity>
         <activity android:name=".animation.AnimationActivity" />
@@ -38,7 +30,13 @@
         </receiver>
 
         <activity android:name=".receiver.ReceiverActivity" />
-        <activity android:name=".thread.ThreadActivity" />
+        <activity android:name=".thread.ThreadActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".imagechange.BitmapActivity" />
         <activity android:name=".step.StepVertialActivity" />
         <activity android:name=".step.StepActivity" />

@@ -23,24 +23,37 @@ public class ThreadActivity extends AppCompatActivity {
         }
     };
 
+    private MyThread myThread = new MyThread();
+    private MyThread myThread2;
+
+    private Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            Logger.logInfo("自定义runnable run方法执行了");
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thread);
-
+        myThread2 = new MyThread(runnable);
         findViewById(R.id.msg1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                send();
+//                send();
+                myThread.start();
             }
         });
 
         findViewById(R.id.msg2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendDelay();
+//                sendDelay();
+                myThread2.run();
             }
         });
+
 
     }
 

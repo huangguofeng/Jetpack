@@ -68,4 +68,17 @@ public class User implements Parcelable {
         dest.writeString(name);
         dest.writeParcelable(card, flags);
     }
+
+    /**
+     * 参数是一个Parcel,用它来存储与传输数据
+     * 当aidl接口参数tag属性为out或者inout时，必须创建该方法，代码内部和有参构造器一致
+     * 因为aidl被编译成java文件后 代码中会调用该方法 但是该方法不存在 需要自己实现
+     *
+     * @param dest dest
+     */
+    public void readFromParcel(Parcel dest) {
+        //注意，此处的读值顺序应当是和writeToParcel()方法中一致的
+        name = dest.readString();
+        card = dest.readParcelable(BankCard.class.getClassLoader());
+    }
 }

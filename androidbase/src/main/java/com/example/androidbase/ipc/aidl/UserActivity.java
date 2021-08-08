@@ -113,7 +113,7 @@ public class UserActivity extends AppCompatActivity {
     private void testList() {
         List list;
         try {
-            list = moneyService.testList(linkedList);
+            list = moneyService.testList(arrayList);
             Logger.logDebug("测试List：" + list.size());
         } catch (RemoteException e) {
             e.printStackTrace();
@@ -123,7 +123,7 @@ public class UserActivity extends AppCompatActivity {
     private void testMap() {
         Map map;
         try {
-            map = moneyService.testMap(linkedHashMap);
+            map = moneyService.testMap(hashMap);
             Logger.logDebug("测试Map：" + map.size());
         } catch (RemoteException e) {
             e.printStackTrace();

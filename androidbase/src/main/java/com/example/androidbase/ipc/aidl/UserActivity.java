@@ -35,9 +35,8 @@ public class UserActivity extends AppCompatActivity {
         @Override
         public void callback(BankCard card) throws RemoteException {
             Logger.logInfo("服务器通过监听类返回的数据：" + card);
-            if (card != null) {
-                textView.setText("服务器通过监听类返回的数据：" + card.getBalance());
-            }
+            card.setBalance(card.getBalance() + 2);
+            serviceCard = card;
         }
     };
     private List linkedList = new LinkedList();
@@ -46,8 +45,10 @@ public class UserActivity extends AppCompatActivity {
     private Map linkedHashMap = new LinkedHashMap();
     private Map hashtable = new Hashtable();
     private Map treeMap = new TreeMap();
-    private User user = new User();
-    private BankCard bankCard = new BankCard();
+    private User clientUser = new User();
+    private User serviceUser;
+    private BankCard clientCard = new BankCard();
+    private BankCard serviceCard;
 
     private Button bind;
     private Button set;
@@ -66,9 +67,9 @@ public class UserActivity extends AppCompatActivity {
         call = (Button) findViewById(R.id.call);
         textView = (TextView) findViewById(R.id.show);
 
-        bankCard.setBalance(-1);
-        user.setName("默认人名");
-        user.setCard(bankCard);
+        clientCard.setBalance(-1);
+        clientUser.setName("默认人名");
+        clientUser.setCard(clientCard);
 
         bind.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,7 +102,7 @@ public class UserActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    moneyService.send(bankCard);
+                    moneyService.send(serviceCard);
                 } catch (RemoteException e) {
                     e.printStackTrace();
                 }
@@ -131,14 +132,15 @@ public class UserActivity extends AppCompatActivity {
     }
 
     private void getUser() {
-        BankCard card = bankCard;
+        BankCard card = clientCard;
         User user;
         Logger.logDebug("测试getUser1：" + card.toString());
-        Logger.logDebug("测试getUser2：" + bankCard.toString());
+        Logger.logDebug("测试getUser2：" + clientCard.toString());
         try {
             user = moneyService.getUser(card);
             Logger.logDebug("测试getUser3：" + user.getCard().toString());
-            Logger.logDebug("测试getUser4：" + bankCard.toString());
+            Logger.logDebug("测试getUser3：" + card.toString());
+            Logger.logDebug("测试getUser4：" + clientCard.toString());
         } catch (RemoteException e) {
             e.printStackTrace();
         }
@@ -171,7 +173,9 @@ public class UserActivity extends AppCompatActivity {
             moneyService = MoneyService.Stub.asInterface(service);
             byte[] bytes = "s".getBytes();
             try {
-                moneyService.test(null, "string", 1, 2L, 3d, true, bytes[0], 4f, '5');
+                Logger.logInfo("准备设置监听");
+                moneyService.setListener(moneyListener);
+//                moneyService.test(null, "string", 1, 2L, 3d, true, bytes[0], 4f, '5');
             } catch (RemoteException e) {
                 e.printStackTrace();
             }

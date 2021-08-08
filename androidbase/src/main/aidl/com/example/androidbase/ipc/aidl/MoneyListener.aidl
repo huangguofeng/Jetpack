@@ -6,5 +6,5 @@ import com.example.androidbase.ipc.aidl.Card;
 
 interface MoneyListener {
     // 基本数据类型中不支持short
-    void callback(out BankCard card);
+    void callback(in BankCard card);
 }

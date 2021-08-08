@@ -15,7 +15,7 @@ interface MoneyService {
 
     void setListener(MoneyListener listener);
 
-    User getUser(out BankCard card);
+    User getUser(in BankCard card);
 
-    void send(out BankCard card);
+    void send(in BankCard card);
 }

@@ -14,7 +14,6 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 import java.util.TreeMap;
 
 /**
@@ -33,16 +32,16 @@ public class BankService extends Service {
     }
 
     int count = 0;
-    BankCard card = new BankCard();
+    BankCard bankCard = new BankCard();
     private Runnable runnable = new Runnable() {
         @Override
         public void run() {
-            while (count < 100) {
+            while (count < 20) {
                 count++;
-                card.setBalance(count);
+                bankCard.setBalance(count);
                 if (moneyListener != null) {
                     try {
-                        moneyListener.callback(card);
+                        moneyListener.callback(bankCard);
                     } catch (RemoteException e) {
                         e.printStackTrace();
                         Logger.logError("moneyListener callback异常");
@@ -70,7 +69,7 @@ public class BankService extends Service {
     public void onCreate() {
         super.onCreate();
         Logger.logInfo("创建 BankService");
-        thread.start();
+//        thread.start();
     }
 
     private final MoneyService.Stub stub = new MoneyService.Stub() {
@@ -109,17 +108,7 @@ public class BankService extends Service {
         @Override
         public User getUser(BankCard card) throws RemoteException {
             Logger.logInfo("getUser：" + card);
-            if (card == null) {
-                Logger.logError("card是空的");
-                int num = new Random().nextInt(99);
-                User user = new User();
-                user.setName("User" + num);
-                BankCard card1 = new BankCard();
-                card1.setBalance(num * 1000);
-                user.setCard(card1);
-                return user;
-            }
-            Logger.logDebug(card.toString());
+            Logger.logInfo("查看服务器bankCard：" + bankCard);
             User user = new User();
             user.setName("User" + card.getBalance());
             card.setBalance(card.getBalance() + 1);
@@ -130,13 +119,13 @@ public class BankService extends Service {
         @Override
         public void send(BankCard card) throws RemoteException {
             Logger.logInfo("send：" + card);
-            if (card == null) {
-                Logger.logError("card是空的");
+            Logger.logInfo("send：" + bankCard);
+
+            if (card != null) {
                 return;
             }
-            card.setBalance(card.getBalance() + 1);
             if (moneyListener != null) {
-                moneyListener.callback(card);
+                moneyListener.callback(bankCard);
             }
         }
     };

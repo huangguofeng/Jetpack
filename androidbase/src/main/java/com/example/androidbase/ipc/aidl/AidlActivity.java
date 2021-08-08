@@ -77,9 +77,8 @@ public class AidlActivity extends AppCompatActivity {
     }
 
     private void bind() {
-        Intent intent = new Intent(this, AidlService.class);
-//        intent.setAction("com.example.androidbase.ipc.aidl");
-//        intent.setPackage("com.example.androidbase");
+        Intent intent = new Intent("com.example.androidbase.ipc.aidl");
+        intent.setPackage("com.example.androidbase");
         bindService(intent, connection, BIND_AUTO_CREATE);
     }
 

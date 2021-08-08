@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".ipc.aidl.AidlActivity">
+
+    <Button
+        android:id="@+id/bind"
+        android:textSize="24sp"
+        android:text="测试list和map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/set"
+        android:textSize="24sp"
+        android:text="设置回调"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/get"
+        android:textSize="24sp"
+        android:text="获取用户信息"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/call"
+        android:textSize="24sp"
+        android:text="发送数据"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/show"
+        android:textSize="24sp"
+        android:text="等待通信数据"
+        android:background="#099"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

@@ -10,24 +10,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Jetpack">
-        <activity android:name=".ipc.aidl.AidlActivity">
+        <service
+            android:name=".ipc.aidl.BankService"
+            android:process=":bank"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.androidbase.ipc.aidl.card" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".ipc.aidl.UserActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ipc.aidl.AidlActivity"></activity>
 
         <service
             android:name=".ipc.aidl.AidlService"
-            android:process=":aidl"
             android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.example.androidbase.ipc.aidl" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </service>
+            android:exported="true"
+            android:process=":aidl"></service>
 
         <activity android:name=".ipc.messenger.MessengerActivity" />
 

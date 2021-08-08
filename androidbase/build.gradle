@@ -38,6 +38,12 @@ android {
     buildFeatures {
         dataBinding true
     }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java', 'src/main/aidl']
+        }
+    }
 }
 
 configurations.all {

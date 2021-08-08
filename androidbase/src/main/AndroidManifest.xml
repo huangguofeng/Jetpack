@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Jetpack">
-        <activity android:name=".ipc.messenger.MessengerActivity">
+        <activity android:name=".ipc.aidl.AidlActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,10 +19,22 @@
         </activity>
 
         <service
-            android:name=".ipc.messenger.MessengerService"
-            android:process=":msgServer"
+            android:name=".ipc.aidl.AidlService"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.androidbase.ipc.aidl" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".ipc.messenger.MessengerActivity" />
+
+        <service
+            android:name=".ipc.messenger.MessengerService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":msgServer" />
 
         <activity android:name=".sqlite.greendao.GreenDaoActivity" />
         <activity android:name=".sqlite.ormlite.OrmliteActivity" />
@@ -40,7 +52,7 @@
         </receiver>
 
         <activity android:name=".receiver.ReceiverActivity" />
-        <activity android:name=".thread.ThreadActivity"></activity>
+        <activity android:name=".thread.ThreadActivity" />
         <activity android:name=".imagechange.BitmapActivity" />
         <activity android:name=".step.StepVertialActivity" />
         <activity android:name=".step.StepActivity" />

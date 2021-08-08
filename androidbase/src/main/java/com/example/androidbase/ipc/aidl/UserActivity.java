@@ -34,9 +34,10 @@ public class UserActivity extends AppCompatActivity {
     private MoneyListener moneyListener = new MoneyListener.Stub() {
         @Override
         public void callback(BankCard card) throws RemoteException {
+            serviceCard = card;
             Logger.logInfo("服务器通过监听类返回的数据：" + card);
             card.setBalance(card.getBalance() + 2);
-            serviceCard = card;
+
         }
     };
     private List linkedList = new LinkedList();
@@ -132,15 +133,13 @@ public class UserActivity extends AppCompatActivity {
     }
 
     private void getUser() {
-        BankCard card = clientCard;
+
         User user;
-        Logger.logDebug("测试getUser1：" + card.toString());
-        Logger.logDebug("测试getUser2：" + clientCard.toString());
+        Logger.logDebug("测试getUser1：" + clientCard.toString());
         try {
-            user = moneyService.getUser(card);
-            Logger.logDebug("测试getUser3：" + user.getCard().toString());
-            Logger.logDebug("测试getUser3：" + card.toString());
-            Logger.logDebug("测试getUser4：" + clientCard.toString());
+            user = moneyService.getUser(clientCard);
+            Logger.logDebug("测试getUser2：" + user.getCard().toString());
+            Logger.logDebug("测试getUser3：" + clientCard.toString());
         } catch (RemoteException e) {
             e.printStackTrace();
         }

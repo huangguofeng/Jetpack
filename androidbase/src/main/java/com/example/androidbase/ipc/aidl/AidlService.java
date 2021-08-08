@@ -7,7 +7,7 @@ import android.os.RemoteException;
 
 import com.lib.utils.Logger;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -15,7 +15,7 @@ import java.util.List;
  * aidl服务端
  */
 public class AidlService extends Service {
-    private List<Book> books = new ArrayList<>();
+    private List<Book> books = new LinkedList<>();
 
     public AidlService() {
     }
@@ -39,31 +39,20 @@ public class AidlService extends Service {
     private final BookManager.Stub bookManager = new BookManager.Stub() {
         @Override
         public List<Book> getBooks() throws RemoteException {
-            synchronized (this) {
-                if (books == null) {
-                    books = new ArrayList<>();
-                }
-            }
             return books;
         }
 
         @Override
         public void addBook(Book book) throws RemoteException {
-            synchronized (this) {
-                if (books == null) {
-                    books = new ArrayList<>();
-                }
-                if (book == null) {
-                    Logger.logError("addBook : book is null");
-                    book = new Book();
-                    book.setPrice(999);
-                    book.setName("默认:" + book.getPrice());
-                }
-                Logger.logDebug(book.toString());
-                if (!books.contains(book)) {
-                    books.add(book);
-                }
-
+            if (book == null) {
+                Logger.logError("addBook : book is null");
+                book = new Book();
+                book.setPrice(999);
+                book.setName("默认:" + book.getPrice());
+            }
+            Logger.logDebug(book.toString());
+            if (!books.contains(book)) {
+                books.add(book);
             }
         }
     };

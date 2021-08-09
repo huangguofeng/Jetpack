@@ -49,7 +49,7 @@ public class UserActivity extends AppCompatActivity {
     private User clientUser = new User();
     private User serviceUser;
     private BankCard clientCard = new BankCard();
-    private BankCard serviceCard;
+    private BankCard serviceCard = new BankCard();
 
     private Button bind;
     private Button set;
@@ -68,7 +68,6 @@ public class UserActivity extends AppCompatActivity {
         call = (Button) findViewById(R.id.call);
         textView = (TextView) findViewById(R.id.show);
 
-        clientCard.setBalance(-1);
         clientUser.setName("默认人名");
         clientUser.setCard(clientCard);
 
@@ -83,7 +82,7 @@ public class UserActivity extends AppCompatActivity {
         set.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Logger.logInfo("准备设置监听");
+                Logger.logInfo("准备设置监听：" + moneyListener);
                 try {
                     moneyService.setListener(moneyListener);
                 } catch (RemoteException e) {
@@ -135,11 +134,11 @@ public class UserActivity extends AppCompatActivity {
     private void getUser() {
 
         User user;
-        Logger.logDebug("测试getUser1：" + clientCard.toString());
+        Logger.logDebug("测试getUser1：" + clientCard);
         try {
             user = moneyService.getUser(clientCard);
-            Logger.logDebug("测试getUser2：" + user.getCard().toString());
-            Logger.logDebug("测试getUser3：" + clientCard.toString());
+            Logger.logDebug("测试getUser2：" + user.getCard());
+            Logger.logDebug("测试getUser3：" + clientCard);
         } catch (RemoteException e) {
             e.printStackTrace();
         }
@@ -172,7 +171,7 @@ public class UserActivity extends AppCompatActivity {
             moneyService = MoneyService.Stub.asInterface(service);
             byte[] bytes = "s".getBytes();
             try {
-                Logger.logInfo("准备设置监听");
+                Logger.logInfo("准备设置监听: " + moneyListener);
                 moneyService.setListener(moneyListener);
 //                moneyService.test(null, "string", 1, 2L, 3d, true, bytes[0], 4f, '5');
             } catch (RemoteException e) {

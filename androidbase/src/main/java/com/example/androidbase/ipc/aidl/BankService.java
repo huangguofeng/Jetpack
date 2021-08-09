@@ -120,10 +120,7 @@ public class BankService extends Service {
         public void send(BankCard card) throws RemoteException {
             Logger.logInfo("send：" + card);
             Logger.logInfo("send：" + bankCard);
-
-            if (card != null) {
-                return;
-            }
+            
             if (moneyListener != null) {
                 moneyListener.callback(bankCard);
             }

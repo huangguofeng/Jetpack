@@ -35,8 +35,8 @@ ext {
             /**
              * JectPack组件库
              */
-            room  : project(':JectPack:room'),
-            work  : project(':JectPack:work'),
+//            room  : project(':JectPack:room'),
+//            work  : project(':JectPack:work'),
             /**
              * Common基础业务组件
              */

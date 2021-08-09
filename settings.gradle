@@ -1,9 +1,9 @@
 rootProject.name = 'Jetpack'
 
 //include ':app'
-include ':appDemo'
+//include ':appDemo'
 //include ':appRoomDemo'
-include ':javaLib'
+//include ':javaLib'
 
 /**
  * common
@@ -16,6 +16,7 @@ include 'LibraryCommon:utils'
 /**
  * JectPack 暂未使用组件
  */
-include 'JectPack:room'
-include 'JectPack:work'
-include ':androidbase'
+//include 'JectPack:room'
+//include 'JectPack:work'
+//include ':androidbase'
+include ':androidFramework'

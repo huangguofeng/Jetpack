@@ -11,13 +11,14 @@
         android:networkSecurityConfig="@xml/network_config"
         android:supportsRtl="true"
         android:theme="@style/Theme.Jetpack">
-        <activity android:name=".mvc.MvcActivity">
+        <activity android:name=".mvp.MvpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".mvc.MvcActivity"></activity>
 
         <meta-data
             android:name="DEBUG"

@@ -14,7 +14,7 @@ import retrofit2.Response;
  * @author :huangguofeng
  * date    :2021/8/9
  * package :com.example.framework.mvc
- * desc    :
+ * desc    :Model角色
  */
 public class NewsModel {
     /**

@@ -21,6 +21,7 @@ import java.util.List;
 
 /**
  * @author huangguofeng
+ * Controller角色+View角色
  */
 public class MvcActivity extends AppCompatActivity {
     private Button button;

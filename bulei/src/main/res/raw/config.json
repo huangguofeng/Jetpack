@@ -1,0 +1,1178 @@
+{
+  "error_code": "0",
+  "data": {
+    "Platform_BannerAd": {
+      "other": {
+        "active": false,
+        "weight": [
+        ],
+        "config": {
+        },
+        "switchingCycle": 30
+      },
+      "cn": {
+        "active": "on",
+        "weight": [
+          "gdt",
+          "Ny"
+        ],
+        "config": {
+          "gdt": {
+            "key": {
+              "ad_gdt_app_id": "1101152570",
+              "ad_gdt_banner_id": "9079537218417626401"
+            },
+            "percentage": ""
+          },
+          "Zplay": {
+            "key": {
+              "zplay_use_id": "d63bf41e4c5962e531b8f16207940409",
+              "zplay_banner_slotid": "ba5d96be6306ddc3e1ca2f716f8b26cc"
+            },
+            "percentage": "25"
+          },
+          "baidu": {
+            "key": {
+              "ad_bd_banner_id": "2015351",
+              "ad_bd_app_id": "e866cfb0",
+              "ad_bd_interstitial_id": "2015351"
+            },
+            "percentage": "50"
+          },
+          "Ny": {
+            "key": {
+            },
+            "percentage": "25"
+          },
+          "AdView": {
+            "key": {
+              "ad_adview_sdk_key": "SDK20161629040641z7snyxkrbndasty"
+            },
+            "percentage": "25"
+          },
+          "Inmobi": {
+            "key": {
+              "ad_inmobi_placement_id": "1473189489298",
+              "ad_inmobi_app_id": "123456789abcdfghjiukljnm09874"
+            },
+            "percentage": "25"
+          },
+          "AdMob": {
+            "key": {
+              "ad_admob_banner_unitId": "ca-app-pub-3940256099942544/6300978111",
+              "ad_admob_banner_appId": "ca-app-pub-3940256099942544~3347511713"
+            },
+            "percentage": "25"
+          }
+        },
+        "switchingCycle": 30
+      }
+    },
+    "Platform_SplashAdControl": [
+      {
+        "vivo": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      },
+      {
+        "m4399": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      },
+      {
+        "oppo": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      },
+      {
+        "jryx": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      },
+      {
+        "hw": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      }
+    ],
+    "Platform_SplashAdShowFirstTimes": "1",
+    "Platform_RequestPermisson": "on",
+    "Platform_VideoAdMasterSwitch": "on",
+    "Sensors_Switch_DebugMode": "on",
+    "Platform_BannerAdCconfig": {
+      "admob ": {
+        "ad_admob_banner_appId": "ca-app-pub-3940256099942544~3347511713",
+        "ad_admob_banner_unitId": "ca-app-pub-3940256099942544/6300978111"
+      },
+      "adview ": {
+        "ad_adview_sdk_key": "SDK20161629040641z7snyxkrbndasty"
+      }
+    },
+    "Platform_BannerAdMasterSwitch": "on",
+    "Platform_NameVerified_Switch_Force": "off",
+    "ga_appkey": "e45d7534afcdf9675517a69b9bf55c94",
+    "Sensors_Switch": "on",
+    "BuglyAnalytic_AppId": "5bdc57e76e",
+    "Platform_InterstitialAdControl": [
+      {
+        "Toutiao": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      },
+      {
+        "OPPO": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      },
+      {
+        "baidumob": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      },
+      {
+        "MyTarget": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      },
+      {
+        "Yandex": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      },
+      {
+        "m4399": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      },
+      {
+        "gdt": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      },
+      {
+        "jryx": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      },
+      {
+        "hw": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      }
+    ],
+    "Platform_Anti_Config": {
+      "template_id": 79,
+      "template_name": "SDK-安卓测试应用-单机",
+      "anti_switch": 1
+    },
+    "verify_bundle_id_switch": "on",
+    "ATTMasterSwitch": "on",
+    "Platform_InterstitialAdInterval": "",
+    "Platform_InterstitialAd": {
+      "other": {
+        "active": "on",
+        "weight": [
+          "AdMob",
+          "Applovin",
+          "FaceBook",
+          "Supersonic",
+          "Inmobi"
+        ],
+        "config": {
+          "Supersonic": {
+            "key": {
+              "ad_supersonic_app_id": "4e2cc8e5"
+            },
+            "percentage": "20"
+          },
+          "FaceBook": {
+            "key": {
+              "ad_facebook_sdk_key": "5452848656"
+            },
+            "percentage": "20"
+          },
+          "Applovin": {
+            "key": {
+            },
+            "percentage": "20"
+          },
+          "Inmobi": {
+            "key": {
+              "ad_inmobi_placement_id": "1507610234558",
+              "ad_inmobi_app_id": "1489145797955331"
+            },
+            "percentage": "20"
+          },
+          "AdMob": {
+            "key": {
+              "ad_admob_interstitial_id4": "ca-app-pub-7188592076082444/6710711140",
+              "ad_admob_interstitial_id3": "ca-app-pub-7188592076082444/5634444959",
+              "ad_admob_interstitial_id2": "ca-app-pub-7188592076082444/3698546756",
+              "ad_admob_interstitial_id1": "ca-app-pub-7188592076082444/3458197581"
+            },
+            "percentage": "20"
+          }
+        }
+      },
+      "cn": {
+        "active": "on",
+        "weight": [
+          "Oneway",
+          "Ny",
+          "Uniplay"
+        ],
+        "config": {
+          "Xingzhe": {
+            "key": {
+              "ad_xingzhe_appid": "youdaoyi",
+              "ad_xingzhe_media_id": "jdydycp6f1d5b"
+            },
+            "percentage": "25"
+          },
+          "Oneway": {
+            "key": {
+              "ad_oneway_publish_id": "gdale2mp8qx8kdln"
+            },
+            "percentage": "25"
+          },
+          "OPPO": {
+            "key": {
+              "ad_oppo_interstitial_id": "329",
+              "ad_oppo_app_id": "100"
+            },
+            "percentage": "25"
+          },
+          "Uniplay": {
+            "key": {
+              "ad_uniplay_interstitial_id": "1706150003"
+            },
+            "percentage": "25"
+          },
+          "Zplay": {
+            "key": {
+              "zplay_use_id": "9f53e8e5fb3f40b80de69bc318b746e4",
+              "zplay_interstitial_slotid": "yjh62r73"
+            },
+            "percentage": "25"
+          },
+          "baidu": {
+            "key": {
+              "ad_bd_banner_id": "2403633",
+              "ad_bd_app_id": "e866cfb0",
+              "ad_bd_interstitial_id": "2403633"
+            },
+            "percentage": "25"
+          },
+          "Ny": {
+            "key": {
+            },
+            "percentage": "25"
+          },
+          "UC": {
+            "key": {
+              "ad_uc_appid": "1000004107",
+              "ad_uc_interstitial_id": "1476429649994172"
+            },
+            "percentage": ""
+          },
+          "MEIZU": {
+            "key": {
+              "ad_meizu_app_id": "25366173147064",
+              "ad_meizu_interstitial_id": "235929737065"
+            },
+            "percentage": "50"
+          },
+          "Tapjoy": {
+            "key": {
+              "ad_tapjoy_appkey": "bjrU_2L-SlSQ8c-BCXDUMQECwJNBcGAcY366isZzYCGQBMatmmL7mXklhSaB",
+              "ad_tapjoy_placement_interstitial": "INTERSTITIAL"
+            },
+            "percentage": ""
+          },
+          "Vungle": {
+            "key": {
+              "ad_vungle_inter_placementid": "DEFAULT32590",
+              "ad_vungle_app_id": "5916309cb46f6b5a3e00009c"
+            },
+            "percentage": "25"
+          },
+          "Mobvista": {
+            "key": {
+              "ad_mobvista_interstitialId": "12817",
+              "ad_mobvista_appkey": "936dcbdd57fe235fd7cf61c2e93da3c4",
+              "ad_mobvista_appid": "92762",
+              "ad_mobvista_interstitialUnitId": "21310"
+            },
+            "percentage": ""
+          },
+          "gdt": {
+            "key": {
+              "ad_gdt_app_id": "1101152570",
+              "ad_gdt_interstitial_id": "7030020348049331"
+            },
+            "percentage": "25"
+          },
+          "TAD": {
+            "key": {
+              "ad_tad_insterstitial_id": "cev2zxbc"
+            },
+            "percentage": "100"
+          },
+          "vivo": {
+            "key": {
+              "ad_vivo_interstitial_id": "d622f303bb034ae5b43e4c549fe041d1",
+              "ad_vivo_appid": "db8346383f8945f395ce0bb829888fc4"
+            },
+            "percentage": ""
+          },
+          "AdView": {
+            "key": {
+              "ad_adview_sdk_key": "SDK20161629040641z7snyxkrbndasty"
+            },
+            "percentage": "25"
+          },
+          "Inmobi": {
+            "key": {
+              "ad_inmobi_placement_id": "1507610234558",
+              "ad_inmobi_app_id": "1489145797955331"
+            },
+            "percentage": "25"
+          },
+          "AdMob": {
+            "key": {
+              "ad_admob_interstitial_id4": "ca-app-pub-7188592076082444/6710711140",
+              "ad_admob_interstitial_id3": "ca-app-pub-7188592076082444/5634444959",
+              "ad_admob_interstitial_id2": "ca-app-pub-7188592076082444/3698546756",
+              "ad_admob_interstitial_id1": "ca-app-pub-7188592076082444/3458197581"
+            },
+            "percentage": "25"
+          }
+        }
+      }
+    },
+    "AdSwitchInChinese": "on",
+    "Platform_NameVerified_Force": "off",
+    "Platform_GuestConvert_Switch_MaxPrice": "1",
+    "Yodo1AnalyticSwitch": "on",
+    "Platform_VideoAd": {
+      "cn": {
+        "active": "on",
+        "weight": [
+          "Uniplay"
+        ],
+        "config": {
+          "Oneway": {
+            "percentage": "20",
+            "key": {
+              "ad_oneway_publish_id": "9r2o85hl9tfqoshg"
+            }
+          },
+          "Jinshanyun": {
+            "percentage": "20",
+            "key": {
+              "ad_jinshanyun_app_id": "tvmvpwzw",
+              "ad_jinshanyun_slot_id": "srrivbfr"
+            }
+          },
+          "TAD": {
+            "percentage": "20",
+            "key": {
+              "ad_tad_appid": "fixz4n4o",
+              "ad_tad_adslotid": "g1ehg14e"
+            }
+          },
+          "Uniplay": {
+            "percentage": "20",
+            "key": {
+              "ad_uniplay_video_id": "1804190001"
+            }
+          },
+          "Vungle": {
+            "percentage": "20",
+            "key": {
+              "ad_vungle_app_id": "5916309cb46f6b5a3e00009c",
+              "ad_vungle_video_placementid": "DEFAULT32590"
+            }
+          },
+          "Mobvista": {
+            "percentage": "20",
+            "key": {
+              "ad_mobvista_appid": "100936",
+              "ad_mobvista_appkey": "df5e047efe691d8596e6e732187f57eb",
+              "ad_mobvista_rewardUnitId": "32892",
+              "ad_mobvista_rewardId": "16506"
+            }
+          },
+          "Tapjoy": {
+            "percentage": "",
+            "key": {
+              "ad_tapjoy_appkey": "bjrU_2L-SlSQ8c-BCXDUMQECwJNBcGAcY366isZzYCGQBMatmmL7mXklhSaB",
+              "ad_tapjoy_placement_video": "video"
+            }
+          },
+          "Zplay": {
+            "percentage": "20",
+            "key": {
+              "zplay_use_id": "9dba479fb535c20d243acd10ffd093bb",
+              "zplay_video_slotid": "qanhmn9h"
+            }
+          },
+          "Ny": {
+            "percentage": "20",
+            "key": {
+              "ad_gdt_app_id": "1101152570",
+              "ad_gdt_video_id": "5090421627704602"
+            }
+          },
+          "gdt": {
+            "percentage": "20",
+            "key": {
+              "ad_gdt_video_id": "5090421627704602",
+              "ad_gdt_app_id": "1101152570"
+            }
+          },
+          "UC": {
+            "percentage": "",
+            "key": {
+              "ad_uc_appid": "1000004107",
+              "ad_uc_video_id": "1475893508926018"
+            }
+          },
+          "Centrixlink": {
+            "percentage": "20",
+            "key": {
+              "ad_centrix_app_id": "xOwJPfH2lP",
+              "ad_centrix_app_key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCSnZvJutGPjM64rMMIMQXmivVx6l0IZBGpnwdJFQhSABtW9MF5vsAK2w7pvaN0rlUDDt8joyTDBEeO9sLSdpnSlcpbLNDn7FDDq5jW1eMuHxJ+gvjIcOByNq4hrjImlRWK061urGUDX0x4fC/H6rdBBonMQODx6jQPGgOYMgnT4wIDAQAB"
+            }
+          },
+          "OPPO": {
+            "percentage": "",
+            "key": {
+              "ad_oppo_video_appid": "rtp4pmx7",
+              "ad_oppo_video_id": "10175"
+            }
+          },
+          "Lanmei": {
+            "percentage": "10",
+            "key": {
+            }
+          },
+          "Unityads": {
+            "percentage": "",
+            "key": {
+              "ad_unityads_app_id": "1580180"
+            }
+          }
+        }
+      },
+      "other": {
+        "active": "on",
+        "weight": [
+          "Supersonic"
+        ],
+        "config": {
+          "Applovin": {
+            "percentage": "10",
+            "key": {
+            }
+          },
+          "Mobvista": {
+            "percentage": "10",
+            "key": {
+              "ad_mobvista_appid": "92762",
+              "ad_mobvista_rewardUnitId": "21310",
+              "ad_mobvista_rewardId": "12817",
+              "ad_mobvista_appkey": "936dcbdd57fe235fd7cf61c2e93da3c4"
+            }
+          },
+          "Chartboost": {
+            "percentage": "10",
+            "key": {
+              "ad_chartboost_app_id": "56c3f33504b016527b7dad7b",
+              "ad_chartboost_signature_id": "ffcd57fbbc52a1e59f29bf95cbbf9b8af34cb16f"
+            }
+          },
+          "Tapjoy": {
+            "percentage": "10",
+            "key": {
+              "ad_tapjoy_appkey": "bjrU_2L-SlSQ8c-BCXDUMQECwJNBcGAcY366isZzYCGQBMatmmL7mXklhSaB",
+              "ad_tapjoy_placement_video": "video"
+            }
+          },
+          "FaceBook": {
+            "percentage": "10",
+            "key": {
+              "ad_facebook_video_key": "545284865631437_636091793217410"
+            }
+          },
+          "AdColony": {
+            "percentage": "10",
+            "key": {
+              "ad_adcolony_app_id": "appf71a3f1d0fb74c2fa3",
+              "ad_adcolony_zone_id": "vz674cfacdede9441dad"
+            }
+          },
+          "Supersonic": {
+            "percentage": "10",
+            "key": {
+              "ad_supersonic_app_id": "6e427e8d"
+            }
+          },
+          "Vungle": {
+            "percentage": "10",
+            "key": {
+              "ad_vungle_app_id": "5728764cf3109b302500007c",
+              "ad_vungle_video_placementid": "RODEOST66211"
+            }
+          },
+          "Unityads": {
+            "percentage": "10",
+            "key": {
+              "ad_unityads_app_id": "104949"
+            }
+          }
+        }
+      }
+    },
+    "Platform_SplashAdsSwitch": "on",
+    "Platform_BannerAdSwitchingCycle": "20",
+    "Sensors_ServerUrl": "https://youdaoyi.datasink.sensorsdata.cn/sa?project=default&token=7d89c1c8b84d30c8",
+    "Platform_NativeAdInterval": "0",
+    "Platform_BannerAdControl": [
+      {
+        "Toutiao": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      },
+      {
+        "MyTarget": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      },
+      {
+        "Yandex": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      }
+    ],
+    "AppsFlyerRandom": "100",
+    "Platform_SplashAdShowTime": "5",
+    "Platform_SplashSwitch": "off",
+    "ga_onoff": "on",
+    "Platform_NameVerified": "off",
+    "Platform_NameVerified_Switch": "off",
+    "Platform_VideoAdControl": [
+      {
+        "233": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      },
+      {
+        "xiaomi": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      },
+      {
+        "Toutiao": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      },
+      {
+        "OPPO": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      },
+      {
+        "baidumob": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      },
+      {
+        "MyTarget": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      },
+      {
+        "Yandex": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      },
+      {
+        "m4399": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      },
+      {
+        "jryx": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      },
+      {
+        "hw": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      }
+    ],
+    "Platform_NameVerified_Switch_Real": "off",
+    "Platform_AdSwitchInChinese": "off",
+    "Platform_InterstitialAdConfig": {
+      "Toutiao": {
+        "ad_toutiao_appid": "5098005",
+        "ad_toutiao_interstitial_id": "",
+        "ad_toutiao_fullscreenvideo_id": "945398720"
+      },
+      "ApplovinMax": {
+        "ad_applovin_interstitial_id": "b5576ee62307219f"
+      },
+      "Unityads": {
+        "ad_unityads_app_id": "3304784",
+        "ad_unityads_interstitial_id": "testdemogp_Interstitial"
+      },
+      "mintegral_gp": {
+        "ad_mintegral_gp_interstitialUnitId": "154247",
+        "ad_mintegral_gp_appid": "119587",
+        "ad_mintegral_gp_appkey": "df5e047efe691d8596e6e732187f57eb",
+        "ad_mintegral_gp_interstitialPlacementId": "2167"
+      },
+      "Xiaomi": {
+        "ad_mi_interstitial_id": "ba323c216f43657db19247048484f9d6",
+        "ad_mi_appid": "2882303761517498575"
+      },
+      "zplay": {
+        "zplay_interstitial_slotid": "yjh62r73"
+      },
+      "OPPO": {
+        "ad_oppo_interstitial_id": "244",
+        "ad_oppo_app_id": "3364440"
+      },
+      "Appnext": {
+        "ad_appnext_placementid_interstitial": "6b661e87-7cfc-4dec-a69e-eb4e9c47ee45"
+      },
+      "Topon": {
+        "ad_topon_app_id": "a5aa1f9deda26d",
+        "ad_topon_interstitial_placementid": "b5d6745b8133f2",
+        "ad_topon_app_key": "4f7b9ac17decb9babec83aac078742c7"
+      },
+      "adview ": {
+        "ad_adview_sdk_key": "SDK20161629040641z7snyxkrbndasty"
+      },
+      "Mopub": {
+        "ad_mopub_interstitial_id": "d69668e7c050431bb9bb35b592fb95a5"
+      },
+      "toutiao_gp": {
+        "ad_toutiao_appid": "5031320",
+        "ad_toutiao_interstitial_id": "1",
+        "ad_toutiao_fullscreenvideo_id": "931320618"
+      },
+      "Chartboost": {
+        "ad_chartboost_app_id": "56c3f33504b016527b7dad7b",
+        "ad_chartboost_signature_id": "ffcd57fbbc52a1e59f29bf95cbbf9b8af34cb16f"
+      },
+      "uniplay": {
+        "ad_uniplay_interstitial_id": "1706150003"
+      },
+      "UC": {
+        "ad_uc_appid": "1000004150",
+        "ad_uc_interstitial_id": "1496913538725288"
+      },
+      "hw": {
+        "ad_hw_interId": "testy63txaom86"
+      },
+      "baidumob": {
+        "ad_bdmob_id": "e866cfb0",
+        "ad_inter_bdmob_id": "2403633"
+      },
+      "MyTarget": {
+        "ad_mytarget_slot_interstitial": "705485"
+      },
+      "Tapjoy": {
+        "ad_tapjoy_appkey": "Knznd5oIQsOoNj-21ejAzQECrKtVsi7axiSqx2ZcdZ1NQyZfW4Hh7Ly2gPy8",
+        "ad_tapjoy_placement_interstitial": "INTERSTITIAL"
+      },
+      "Mobvista": {
+        "ad_mobvista_interstitialId": "1",
+        "ad_mobvista_appkey": "df5e047efe691d8596e6e732187f57eb",
+        "ad_mobvista_appid": "101187",
+        "ad_mobvista_interstitialUnitId": "33719"
+      },
+      "m4399": {
+        "ad_4399_interstitial_id": "521",
+        "ad_4399_native_id": "12655",
+        "ad_4399_app_id": "521"
+      },
+      "jryx": {
+        "ad_jryx_app_id": "5105522",
+        "ad_jryx_inter_codeid": "945481692"
+      },
+      "QUYS": {
+        "ad_quys_interstitial_id": "CP001002",
+        "ad_quys_interstitial_key": "6920078CB791D6673354A6D467C050E5",
+        "ad_quys_app_id": "A001002"
+      },
+      "xingzhe": {
+        "ad_xingzhe_appid": "jdydycp6f1d5b",
+        "ad_xingzhe_media_id": "youdaoyi"
+      },
+      "Smaato": {
+        "ad_smaato_publisherid": "1100042525",
+        "ad_smaato_interstitial_adspaceid": "130626426"
+      },
+      "vivo": {
+        "ad_vivo_interstitial_id": "d622f303bb034ae5b43e4c549fe041d1",
+        "ad_vivo_appid": "db8346383f8945f395ce0bb829888fc4"
+      },
+      "UnityAds": {
+        "ad_unityads_app_id": "2970881",
+        "ad_unityads_interstitial_id": "SteppyPantsGPAU_Interstitial"
+      },
+      "FaceBook": {
+        "ad_facebook_sdk_key": "469994160267466_469995370267345"
+      },
+      "360": {
+        "": ""
+      },
+      "mopub": {
+        "ad_mopub_appid": "612ed441645f4ce7bdd143b83bf1163e",
+        "ad_mopub_interstitial_id": "94b05216216543b8b3166a4cfe085f52"
+      },
+      "shenqi": {
+        "ad_shenqi_interstitial_id": "4e1ce16814e24674114c658a943219c7",
+        "ad_shenqi_videointerstitial_id": ""
+      },
+      "Supersonic": {
+        "ad_supersonic_app_id": "a2ba04c5"
+      },
+      "MEIZU": {
+        "ad_meizu_app_id": "06b0c5bacb16",
+        "ad_meizu_interstitial_id": "30615"
+      },
+      "Vungle": {
+        "ad_vungle_inter_placementid": "_____GP___-2986333",
+        "ad_vungle_app_id": "5ad59e5a7e0240085bcf964c"
+      },
+      "Baidu": {
+        "ad_interstitial_bd_id": "2050906"
+      },
+      "gdt": {
+        "ad_gdt_app_id": "1106728623",
+        "ad_gdt_interstitial_id": "",
+        "ad_gdt_interstitial_control": "false",
+        "ad_gdt_interstitial_id_v2": "4090791272610625",
+        "ad_gdt_interstitial_close": "false"
+      },
+      "Yandex": {
+        "ad_yandex_interstitial_blockid": "R-M-DEMO-320x480"
+      },
+      "ksad": {
+        "ad_ks_app_id": "90030",
+        "ad_ks_inter_pageid": "90030001"
+      },
+      "admob": {
+        "ad_admob_interstitial_id": "ca-app-pub-7188592076082444/3458197581"
+      },
+      "Applovin": {
+      },
+      "Inmobi": {
+        "ad_inmobi_placement_id": "1595607607706",
+        "ad_inmobi_inter_placementid": "1595607607706",
+        "ad_inmobi_app_id": "524366818f30454f91beb6596de31424"
+      },
+      "AdMob": {
+        "ad_admob_interstitial_id4": "ca-app-pub-7188592076082444/6710711140",
+        "ad_admob_interstitial_appId": "ca-app-pub-7188592076082444~5943610619",
+        "ad_admob_interstitial_id3": "ca-app-pub-3940256099942544/1033173712",
+        "ad_admob_interstitial_id2": "ca-app-pub-3940256099942544/1033173712",
+        "ad_admob_interstitial_id1": "ca-app-pub-3940256099942544/1033173712",
+        "ad_admob_interstitial_oguryappid": "272993"
+      }
+    },
+    "Platform_Splash_RequestPermisson": "on",
+    "Platform_NativeAdControl": [
+      {
+        "vivo": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      },
+      {
+        "OPPO": {
+          "maxShowTimes": -1,
+          "ratio": 0,
+          "group": "all"
+        }
+      }
+    ],
+    "Platform_Feedback_SwitchAd": "on",
+    "Platform_NativeAdConfig": {
+      "OPPO": {
+        "ad_oppo_app_id": "3364440",
+        "ad_oppo_native_id": "106289"
+      },
+      "hw": {
+      },
+      "vivo": {
+        "ad_vivo_appid": "db8346383f8945f395ce0bb829888fc4",
+        "ad_vivo_native_position_id": "b02f02a83d1f4ffe8082679803fa9979"
+      }
+    },
+    "Platform_NameVerified_Switch_MaxPrice": "1",
+    "Platform_NativeAdMasterSwitch": "on",
+    "ga_secret": "6279a5ac1d8f661ef22706c7a569a5254118a3e4",
+    "Platform_BannerAdConfig": {
+      "ApplovinMax": {
+        "ad_applovin_banner_id": "8fa47e2f41f35a03"
+      },
+      "Toutiao": {
+        "ad_toutiao_appid": "5098005",
+        "ad_toutiao_banner_id": "945398712"
+      },
+      "Appnext": {
+        "ad_appnext_placementid_banner": "ac60169c-b46a-4657-8447-1ec737cc1bcc"
+      },
+      "adview ": {
+        "ad_adview_sdk_key": "SDK20161629040641z7snyxkrbndasty"
+      },
+      "baidu": {
+        "ad_bd_banner_id": "2015351",
+        "ad_bd_app_id": "e866cfb0"
+      },
+      "Mopub": {
+        "ad_mopub_banner_id": "2f3bf5d43e184bf39eb5a787efdf34a5"
+      },
+      "baidumob": {
+        "ad_bdmob_id": "e866cfb0",
+        "ad_banner_bdmob_id": "2015351"
+      },
+      "Supersonic": {
+        "ad_supersonic_app_id": "a2ba04c5"
+      },
+      "MyTarget": {
+        "ad_mytarget_slot_banner": "705677"
+      },
+      "gdt": {
+        "ad_gdt_app_id": "1101152570",
+        "ad_gdt_banner_id": "9079537218417626401",
+        "ad_gdt_banner_id_v2": "4080052898050840"
+      },
+      "Yandex": {
+        "ad_yandex_banner_blockid": "R-M-DEMO-320x50"
+      },
+      "admob ": {
+        "ad_admob_banner_unitId": "ca-app-pub-3940256099942544/6300978111",
+        "ad_admob_banner_appId": "ca-app-pub-3940256099942544~3347511713"
+      },
+      "Smaato": {
+        "ad_smaato_publisherid": "1100042525",
+        "ad_smaato_banner_adspaceid": "130626424"
+      },
+      "Inmobi": {
+        "ad_inmobi_placement_id": "1593138026185",
+        "ad_inmobi_banner_placementid": "1593138026185",
+        "ad_inmobi_app_id": "524366818f30454f91beb6596de31424"
+      },
+      "AdMob": {
+        "ad_admob_banner_unitId": "ca-app-pub-3940256099942544/6300978111",
+        "ad_admob_banner_appId": "ca-app-pub-3940256099942544~3347511713"
+      }
+    },
+    "Platform_NativeSwitch": "off",
+    "Platform_SplashAdMasterSwitch": "on",
+    "time": "2019-1-31 23:59:59",
+    "Platform_SplashAdConfig": {
+      "xiaomi": {
+        "ad_mi_splash_id": "b373ee903da0c6fc9c9da202df95a500",
+        "ad_mi_appid": "2882303761517411490"
+      },
+      "mintegral_gp": {
+        "ad_mintegral_gp_appid": "119587",
+        "ad_mintegral_gp_splashUnitId": "368341",
+        "ad_mintegral_gp_appkey": "df5e047efe691d8596e6e732187f57eb",
+        "ad_mintegral_gp_splashPlacementId": "247662"
+      },
+      "Topon": {
+        "ad_topon_splash_placementid": "b5bea7c1b653ef",
+        "ad_topon_app_id": "a5aa1f9deda26d",
+        "ad_topon_app_key": "4f7b9ac17decb9babec83aac078742c7"
+      },
+      "baidu": {
+        "ad_video_splash_id": "1000002"
+      },
+      "360": {
+        "": ""
+      },
+      "uc": {
+        "ad_uc_appid": "1000004150",
+        "ad_uc_splash_id": "1527523614583"
+      },
+      "hw": {
+        "ad_hw_splashId": "testq6zq98hecj"
+      },
+      "shenqi": {
+        "ad_shenqi_splash_id": "8849c9c62b47fcc0a3091a80e7115172"
+      },
+      "MEIZU": {
+        "ad_meizu_app_id": "06b0c5bacb16",
+        "ad_meizu_splash_id": "69945"
+      },
+      "oppo": {
+        "ad_oppo_splash_id": "9674",
+        "ad_oppo_app_id": "3364440"
+      },
+      "Baidu": {
+        "ad_splash_bd_id": "2051286"
+      },
+      "m4399": {
+        "ad_4399_splash_id": "12654",
+        "ad_4399_app_id": "521"
+      },
+      "gdt": {
+        "ad_gdt_app_id": "1101152570",
+        "ad_gdt_splash_id": "8863364436303842593"
+      },
+      "jryx": {
+        "ad_jryx_app_id": "5105522",
+        "ad_jryx_splash_codeid": "887380978"
+      },
+      "vivo": {
+        "ad_vivo_appid": "db8346383f8945f395ce0bb829888fc4",
+        "ad_vivo_splash_id": "d16fb4804a3742b6af03c4ffd077869d"
+      },
+      "toutiao": {
+        "ad_toutiao_appid": "5098005",
+        "ad_toutiao_splash_id": "887365206"
+      },
+      "AdMob": {
+        "ad_admob_appopenad_unitId": "ca-app-pub-3940256099942544/1033173712",
+        "ad_admob_appopenad_appId": "ca-app-pub-3940256099942544~3347511713"
+      }
+    },
+    "Platform_InterstitialAdMasterSwitch": "on",
+    "Platform_VideoAdConfig": {
+      "Toutiao": {
+        "ad_toutiao_appid": "5098005",
+        "ad_toutiao_video_id": "945398725"
+      },
+      "xiaomi": {
+        "ad_mi_ksy_slotid": "DdvMGEvq",
+        "ad_mi_ksy_appid": "nngiG72b",
+        "ad_mi_appid": "2882303761517498575",
+        "ad_mi_video_id": "ba1aa049ecb73b1e16c2174d50919e5a"
+      },
+      "ApplovinMax": {
+        "ad_applovin_video_id": "477b6b3120489da3"
+      },
+      "Unityads": {
+        "ad_unityads_app_id": "3304784",
+        "ad_unityads_rewarded_id": "rewardedVideo"
+      },
+      "mintegral_gp": {
+        "ad_mintegral_gp_appid": "119587",
+        "ad_mintegral_gp_rewardUnitId": "154245",
+        "ad_mintegral_gp_rewardPlacementId": "2168",
+        "ad_mintegral_gp_appkey": "df5e047efe691d8596e6e732187f57eb"
+      },
+      "OPPO": {
+        "ad_oppo_img_native_id": "NULL",
+        "ad_oppo_video_id": "18111",
+        "ad_oppo_app_id": "3364440"
+      },
+      "Appnext": {
+        "ad_appnext_placementid_video": "1a8f02fe-b827-4573-80b8-378efe80d76a"
+      },
+      "Topon": {
+        "ad_topon_app_id": "a5aa1f9deda26d",
+        "ad_topon_video_placementid": "b5d67459a3e535",
+        "ad_topon_app_key": "4f7b9ac17decb9babec83aac078742c7"
+      },
+      "Mopub": {
+        "ad_mopub_video_id": "d2fd3fe636d142eaac82748ee66ff1be"
+      },
+      "Chartboost": {
+        "ad_chartboost_app_id": "56c3f33504b016527b7dad7b",
+        "ad_chartboost_signature_id": "ffcd57fbbc52a1e59f29bf95cbbf9b8af34cb16f"
+      },
+      "toutiao_gp": {
+        "ad_toutiao_appid": "5031320",
+        "ad_toutiao_video_id": "931320774"
+      },
+      "UC": {
+        "ad_uc_appid": "1000004150",
+        "ad_uc_video_id": "1496913538725287"
+      },
+      "hw": {
+        "ad_hw_rewardId": "testx9dtjwj8hp"
+      },
+      "baidumob": {
+        "ad_bdmob_id": "e866cfb0",
+        "ad_video_bdmob_id": "5925490"
+      },
+      "233": {
+        "ad_233_app_id": "1195513051",
+        "ad_233_video_id": "999000000"
+      },
+      "MyTarget": {
+        "ad_mytarget_slot_video": "707254"
+      },
+      "Tapjoy": {
+        "ad_tapjoy_appkey": "Knznd5oIQsOoNj-21ejAzQECrKtVsi7axiSqx2ZcdZ1NQyZfW4Hh7Ly2gPy8",
+        "ad_tapjoy_placement_video": "VIDEO"
+      },
+      "Mobvista": {
+        "ad_mobvista_appkey": "df5e047efe691d8596e6e732187f57eb",
+        "ad_mobvista_rewardId": "16506",
+        "ad_mobvista_appid": "100936",
+        "ad_mobvista_rewardUnitId": "32892"
+      },
+      "m4399": {
+        "ad_4399_video_id": "12656",
+        "ad_4399_app_id": "521"
+      },
+      "jryx": {
+        "ad_jryx_app_id": "5105522",
+        "ad_jryx_video_codeid": "945479399"
+      },
+      "kuaishou": {
+        "ad_kuaishou_merge_reward_id": "gsz1028",
+        "ad_kuaishou_minimum_guarantee_reward_app_id": "5115408",
+        "ad_kuaishou_merge_reward_scene": "1",
+        "ad_kuaishou_minimum_guarantee_reward_id": "945574453"
+      },
+      "QUYS": {
+        "ad_quys_video_key": "A5A1867021E5BCA69390A63F83628FE3",
+        "ad_quys_app_id": "A001002",
+        "ad_quys_video_id": "JL001002"
+      },
+      "unityads ": {
+        "ad_unityads_app_id": "1580180"
+      },
+      "Smaato": {
+        "ad_smaato_publisherid": "1100042525",
+        "ad_smaato_video_adspaceid": "130626428"
+      },
+      "vivo": {
+        "vivo_video_position_id": "a0b0006989694c22aab509b3fad9ebed",
+        "ad_vivo_native_position_id": "b02f02a83d1f4ffe8082679803fa9979",
+        "ad_vivo_appid": "db8346383f8945f395ce0bb829888fc4"
+      },
+      "tad ": {
+        "ad_tad_appid": "l9c2bewc",
+        "ad_tad_adslotid": "aij8c1pm"
+      },
+      "FaceBook": {
+        "ad_facebook_video_key": "469994160267466_469996170267265"
+      },
+      "360": {
+        "": ""
+      },
+      "mopub": {
+        "ad_mopub_appid": "612ed441645f4ce7bdd143b83bf1163e",
+        "ad_mopub_video_id": "5e36cfbbd56a4726bb356029dfbc8deb"
+      },
+      "shenqi": {
+        "ad_shenqi_video_id": "da02232e9cb702a879984f5c8c81d80e"
+      },
+      "Supersonic": {
+        "ad_supersonic_app_id": "a2ba04c5"
+      },
+      "MEIZU": {
+        "ad_meizu_app_id": "06b0c5bacb16",
+        "ad_meizu_video_id": "29283"
+      },
+      "Vungle": {
+        "ad_vungle_app_id": "5bd97a5b4d3adf04414abd8e",
+        "ad_vungle_video_placementid": "_____GP___-2481200"
+      },
+      "Baidu": {
+        "ad_video_bd_id": "2050907"
+      },
+      "gdt": {
+        "ad_gdt_app_id": "1106728623",
+        "ad_gdt_video_id": "5090792304009119"
+      },
+      "Yandex": {
+        "ad_yandex_video_blockid": "R-M-DEMO-rewarded-client-side-rtb"
+      },
+      "ksad": {
+        "ad_ks_app_id": "90030",
+        "ad_ks_video_pageid": "90030001"
+      },
+      "Applovin": {
+      },
+      "Inmobi": {
+        "ad_inmobi_placement_id": "1595023063133",
+        "ad_inmobi_video_placementid": "1595023063133",
+        "ad_inmobi_app_id": "524366818f30454f91beb6596de31424"
+      },
+      "AdMob": {
+        "ad_admob_video_appId": "ca-app-pub-3940256099942544~3347511713",
+        "ad_admob_video_unitId": "ca-app-pub-3940256099942544/5224354917"
+      }
+    }
+  },
+  "data_identifer": "1616895845590",
+  "is_test_model": false,
+  "is_debug_model": false,
+  "report_fields": [
+    {
+      "key": "Yodo1abGroup",
+      "value": "B"
+    }
+  ],
+  "location_identifer": "cn",
+  "location_identifer_ttl": "6"
+}

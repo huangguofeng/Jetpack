@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_tm"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.fragment.ForgetFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/forget_bg"
+        android:src="@mipmap/forget_password_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginTop="100dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:text="@string/login_button_forget_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/forget_input_phone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_input_height"
+            android:layout_marginTop="40dp"
+            android:paddingStart="20dp"
+            android:background="@drawable/login_input"
+            android:digits="0123456789"
+            android:gravity="center_vertical"
+            android:hint="@string/login_input_phone"
+            android:inputType="number"
+            android:maxLength="11"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="14sp"
+            tools:ignore="RtlSymmetry,TextFields" />
+
+        <Button
+            android:id="@+id/forget_next"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_input_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:text="@string/forget_password_next"
+            android:background="@drawable/login_button_yellow"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+    </LinearLayout>
+</FrameLayout>

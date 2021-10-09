@@ -8,10 +8,10 @@ rootProject.name = 'Jetpack'
 /**
  * common
  */
-include 'LibraryCommon:base'
-include 'LibraryCommon:common'
-include 'LibraryCommon:http'
-include 'LibraryCommon:utils'
+include 'Base:base'
+include 'Base:common'
+include 'Base:http'
+include 'Base:utils'
 
 /**
  * JectPack 暂未使用组件
@@ -20,3 +20,4 @@ include 'LibraryCommon:utils'
 //include 'JectPack:work'
 //include ':androidbase'
 include ':androidFramework'
+include ':bulei'

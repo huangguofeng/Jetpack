@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bulei.sport.ui.activity.WelcomeActivity">
+
+    <ImageView
+        android:fitsSystemWindows="true"
+        android:id="@+id/welcome_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/welcome" />
+    <ImageView
+        android:id="@+id/login_bg"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <ImageView
+        android:id="@+id/login_bg_focus"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <LinearLayout
+        android:id="@+id/login_ll"
+        android:visibility="gone"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:text="@string/login_title_verify"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:id="@+id/login_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:text="@string/login_title_tip"
+            android:layout_marginTop="10dp"
+            android:id="@+id/login_title_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/login_input_phone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_input_height"
+            android:layout_marginTop="40dp"
+            android:paddingStart="20dp"
+            android:background="@drawable/login_input"
+            android:digits="0123456789"
+            android:gravity="center_vertical"
+            android:hint="@string/login_input_phone"
+            android:inputType="number"
+            android:maxLength="11"
+            android:maxLines="1"
+            android:textColor="@android:color/white"
+            android:textColorHint="@color/hint"
+            android:textSize="14sp"
+            tools:ignore="RtlSymmetry,TextFields" />
+        <FrameLayout
+            android:id="@+id/login_input_verify_code_fm"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_input_height">
+            <EditText
+                android:id="@+id/login_input_verify_code"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="20dp"
+                android:background="@drawable/login_input"
+                android:gravity="center_vertical"
+                android:hint="@string/login_input_verify_code"
+                android:inputType="number"
+                android:maxLength="4"
+                android:maxLines="1"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/hint"
+                android:textSize="14sp"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:layout_gravity="center|right"
+                android:text="@string/login_button_get_verify"
+                android:id="@+id/login_get_verify_code_tv"
+                android:layout_marginEnd="@dimen/login_checkbox_password_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/login_checkbox_layout"
+                tools:ignore="RtlHardcoded" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/login_input_password_fm"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_input_height">
+            <EditText
+                android:id="@+id/login_input_password"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="20dp"
+                android:background="@drawable/login_input"
+                android:gravity="center_vertical"
+                android:hint="@string/login_input_password"
+                android:inputType="textPassword"
+                android:maxLength="16"
+                android:maxLines="1"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/hint"
+                android:textSize="14sp"
+                tools:ignore="RtlSymmetry" />
+            <CheckBox
+                android:checked="false"
+                android:layout_gravity="center|right"
+                android:id="@+id/login_checkbox_password"
+                android:layout_marginEnd="@dimen/login_checkbox_password_margin"
+                android:button="@null"
+                android:background="@drawable/login_checkbox_password"
+                android:layout_width="@dimen/login_checkbox_layout"
+                android:layout_height="@dimen/login_checkbox_layout"
+                tools:ignore="RtlHardcoded" />
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/login_get_verify_code"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_input_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:text="@string/login_button_get_verify"
+            android:background="@drawable/login_button_yellow"
+            android:textColor="@color/login_button"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/login_login"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_input_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:text="@string/login_button_login"
+            android:background="@drawable/login_button_yellow"
+            android:textColor="@color/login_button"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/login_register"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_input_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:text="@string/login_button_register"
+            android:background="@drawable/login_button_white"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="40dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/login_other1"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:gravity="right"
+                android:text="@string/login_title_password"
+                android:textSize="14sp"
+                android:textColor="@color/white" />
+            <View
+                android:layout_weight="0"
+                android:layout_width="1dp"
+                android:layout_height="10dp"
+                android:background="@color/white" />
+
+            <TextView
+                android:id="@+id/login_other2"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="@string/login_title_register"
+                android:textSize="14sp"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            android:gravity="center"
+            android:text="使用第三方登录"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:src="@mipmap/ic_launcher" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:src="@mipmap/ic_launcher" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

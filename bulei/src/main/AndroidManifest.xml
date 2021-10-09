@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.bulei.sport">
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="29" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.sensor.stepcounter" />
+    <uses-feature android:name="feature:android.hardware.sensor.stepdetector" />
+
+    <uses-permission
+        android:name="android.permission.READ_PHONE_STATE"
+        android:maxSdkVersion="29" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 身体活动识别权限 -->
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" /> <!-- 身体传感器权限 -->
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:name=".BuLeiApp"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true">
+        <meta-data android:name="android.notch_support" android:value="true"/>
+        <activity
+            android:name=".ui.activity.WelcomeActivity"
+            android:theme="@style/LauncherTheme"/>
+
+        <activity
+            android:name=".ui.activity.HumanSkeletonActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.activity.VerifyCodeActivity"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".ui.activity.ForgetActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <activity android:name="com.example.myapplication.Main2Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name="com.bulei.sport.ui.activity.AiLiveActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <meta-data
+            android:name="DEBUG"
+            android:value="true" />
+        <meta-data
+            android:name="RELEASE"
+            android:value="true" />
+        <!-- 用户从华为应用市场安装您的应用后，将自动更新机器学习模型到设备 -->
+        <meta-data
+            android:name="com.huawei.hms.ml.DEPENDENCY"
+            android:value= "skeleton" />
+
+        <service
+            android:name="com.bulei.stepcount.StepService"
+            android:priority="1000"
+            android:process="com.bulei.step.service">
+            <intent-filter>
+
+                <!-- 系统启动完成后会调用 -->
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.DATE_CHANGED" />
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.intent.action.ACTION_TIME_TICK" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

@@ -39,10 +39,15 @@ dependencies {
     compileOnly rootProject.ext.module.utils
     compileOnly rootProject.ext.module.base
     api "com.squareup.retrofit2:converter-gson:$rootProject.retrofit2"
-    api "com.squareup.retrofit2:adapter-rxjava:$rootProject.retrofit2"
+    api("com.squareup.retrofit2:adapter-rxjava3:$rootProject.retrofit2") {
+        exclude group: 'io.reactivex.rxjava3'
+    }
     api("com.squareup.retrofit2:retrofit:$rootProject.retrofit2") {
 //        exclude group: 'com.squareup.okhttp3'
 //        exclude group: 'com.squareup.okio'
     }
 //    api "com.squareup.okhttp3:okhttp:$rootProject.okhttp"
+    api "io.reactivex.rxjava3:rxjava:$rootProject.rxjava"
+    api "io.reactivex.rxjava3:rxandroid:$rootProject.rxandroid"
+    api "com.github.liujingxing.rxlife:rxlife-rxjava3:$rootProject.rxlife"
 }

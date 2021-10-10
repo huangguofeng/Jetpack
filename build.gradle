@@ -59,6 +59,7 @@ ext {
     rxjava = '3.1.0'
     rxandroid = '3.0.0'
     rxlife = '2.2.1'
+    arouter = '1.5.2'
 
     multidex = '2.0.1'
     lifecycle = '2.3.1'

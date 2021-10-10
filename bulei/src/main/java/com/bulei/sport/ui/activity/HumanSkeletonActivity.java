@@ -1,24 +1,18 @@
 package com.bulei.sport.ui.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModel;
 
 import com.bulei.sport.databinding.ActivitySkeletonBinding;
-import com.bulei.sport.viewmodel.LoginViewModel;
-import com.lib.base.ui.BaseActivity;
 import com.lib.base.ui.BasicActivity;
-
-import java.util.List;
 
 public final class HumanSkeletonActivity extends BasicActivity {
     private static final String TAG = "[HumanSkeletonActivity]: ";
 
     ActivitySkeletonBinding binding;
 
+    @Override
     @RequiresApi(api = 21)
     protected void onCreate(Bundle paramBundle) {
         super.onCreate(paramBundle);
@@ -28,6 +22,7 @@ public final class HumanSkeletonActivity extends BasicActivity {
     }
 
 
+    @Override
     public void onDestroy() {
         super.onDestroy();
 

@@ -5,7 +5,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.net.Uri;
 
-import com.lib.http.HttpRetrofit;
+import com.lib.http.RetrofitManager;
 import com.lib.utils.device.NetworkUtils;
 import com.lib.utils.file.MmKvUtil;
 
@@ -43,7 +43,7 @@ public class CommonProvider extends ContentProvider {
         // TODO: Implement this to initialize your content provider on startup.
         MmKvUtil.init(getContext());
         NetworkUtils.init(getContext());
-        HttpRetrofit.get(getContext());
+        RetrofitManager.get();
         return true;
     }
 

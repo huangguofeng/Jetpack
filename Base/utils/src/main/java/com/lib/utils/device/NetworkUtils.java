@@ -11,6 +11,7 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.telephony.TelephonyManager;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
 import com.lib.utils.Logger;
@@ -41,6 +42,11 @@ public class NetworkUtils {
      * 网络监控注册状态
      */
     private static boolean registerState = false;
+    /**
+     * 是否展示网络状态变化日志，因为这些日志会很频繁的输出，影响查看日志
+     * 默认展示一次
+     */
+    private static boolean isShowLog = true;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private static ConnectivityManager.NetworkCallback networkCallback = new ConnectivityManager.NetworkCallback() {
@@ -48,7 +54,7 @@ public class NetworkUtils {
          * 网络连接并且可用时回调
          */
         @Override
-        public void onAvailable(Network network) {
+        public void onAvailable(@NonNull Network network) {
             super.onAvailable(network);
             netAvailable = true;
             Logger.logDebug(TAG + "网络onAvailable：" + network.toString());
@@ -58,7 +64,7 @@ public class NetworkUtils {
          * 网络即将断开时触发
          */
         @Override
-        public void onLosing(Network network, int maxMsToLive) {
+        public void onLosing(@NonNull Network network, int maxMsToLive) {
             super.onLosing(network, maxMsToLive);
             Logger.logDebug(TAG + "网络onLosing,最大保留时间：" + maxMsToLive);
         }
@@ -67,7 +73,7 @@ public class NetworkUtils {
          * 网络已经断开时触发
          */
         @Override
-        public void onLost(Network network) {
+        public void onLost(@NonNull Network network) {
             super.onLost(network);
             netAvailable = false;
             Logger.logDebug(TAG + "网络onLost");
@@ -95,19 +101,23 @@ public class NetworkUtils {
          * TRANSPORT_WIFI：表明当前接入的是WIFI网络，还有一些别的蓝牙网络，有线网络等等可以直接查看文档或源码了解
          */
         @Override
-        public void onCapabilitiesChanged(Network network, NetworkCapabilities networkCapabilities) {
+        public void onCapabilitiesChanged(@NonNull Network network, @NonNull NetworkCapabilities networkCapabilities) {
             super.onCapabilitiesChanged(network, networkCapabilities);
-            Logger.logInfo(TAG + "onCapabilitiesChanged 是否连接上了WIFI或者移动蜂窝网络：" + networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET));
+
 
             netAvailable = networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED);
             mobileNetWorkState = networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR);
             wifiState = networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI);
+            if(isShowLog){
+                Logger.logInfo(TAG + "onCapabilitiesChanged 是否连接上了WIFI或者移动蜂窝网络：" + networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET));
+                Logger.logDebug(TAG + "onCapabilitiesChanged 是否真的能上网：" + netAvailable);
+                Logger.logDebug(TAG + "onCapabilitiesChanged 当前接入的是否是蜂窝网络：" + mobileNetWorkState);
+                Logger.logDebug(TAG + "onCapabilitiesChanged 当前接入的是WIFI型网络：" + wifiState);
+                Logger.logDebug(TAG + "onCapabilitiesChanged 网络功能状态：" + networkCapabilities.toString());
 
-            Logger.logDebug(TAG + "onCapabilitiesChanged 是否真的能上网：" + netAvailable);
-            Logger.logDebug(TAG + "onCapabilitiesChanged 当前接入的是否是蜂窝网络：" + mobileNetWorkState);
-            Logger.logDebug(TAG + "onCapabilitiesChanged 当前接入的是WIFI型网络：" + wifiState);
+                isShowLog = false;
+            }
 
-            Logger.logDebug(TAG + "onCapabilitiesChanged 网络功能状态：" + networkCapabilities.toString());
         }
 
         @Override

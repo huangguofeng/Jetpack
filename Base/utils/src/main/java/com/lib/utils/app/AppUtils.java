@@ -54,7 +54,7 @@ public class AppUtils {
             PackageManager manager = ctx.getPackageManager();
             PackageInfo packageInfo = null;
 
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
                 packageInfo = manager.getPackageInfo(ctx.getPackageName(), PackageManager.GET_SIGNING_CERTIFICATES);
                 Signature[] signatures = new Signature[0];
                 /*

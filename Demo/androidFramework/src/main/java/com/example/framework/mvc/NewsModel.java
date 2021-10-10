@@ -2,9 +2,6 @@ package com.example.framework.mvc;
 
 import com.example.framework.news.INews;
 import com.example.framework.news.News;
-import com.lib.http.HttpCallback;
-import com.lib.http.HttpRetrofit;
-import com.lib.http.HttpRetrofitCallback;
 import com.lib.utils.Logger;
 
 import retrofit2.Call;

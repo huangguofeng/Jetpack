@@ -63,13 +63,21 @@ dependencies {
     api "androidx.lifecycle:lifecycle-livedata:$rootProject.lifecycle"
     api "androidx.lifecycle:lifecycle-viewmodel-savedstate:$rootProject.lifecycle"
 
-    // Glide 图片加载库
-    api "com.github.bumptech.glide:glide:$rootProject.glide"
-
     api "androidx.appcompat:appcompat:$rootProject.appcompat"
     api "androidx.constraintlayout:constraintlayout:$rootProject.constraintlayout"
     api "com.google.android.material:material:$rootProject.material"
 
-//    api "androidx.viewpager2:viewpager2:$rootProject.viewpager2"
+    api "androidx.viewpager2:viewpager2:$rootProject.viewpager2"
 
+    // Glide 图片加载库
+    api "com.github.bumptech.glide:glide:$rootProject.glide"
+    // Glide 图形变化支持库
+    api "jp.wasabeef:glide-transformations:3.3.0"
+
+    // 路由框架
+    api "com.alibaba:arouter-api:$rootProject.arouter"
+    annotationProcessor "com.alibaba:arouter-compiler:$rootProject.arouter"
+
+    // rxjava生命周期框架
+    compileOnly 'com.github.liujingxing.rxlife:rxlife-rxjava3:2.2.1'
 }

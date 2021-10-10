@@ -7,9 +7,6 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.databinding.DataBindingUtil;
-import androidx.databinding.ViewDataBinding;
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.SavedStateViewModelFactory;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -43,15 +40,8 @@ public abstract class BaseViewModelFragment<VIEW_MODEL extends BaseViewModel> ex
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(getLayoutId(),container,false);
+        return inflater.inflate(getLayoutId(), container, false);
     }
-
-    /**
-     * 获取activity的布局文件
-     *
-     * @return 布局文件id: R.layout.xxx
-     */
-    protected abstract int getLayoutId();
 
     /**
      * 定义BaseViewModel初始化的参数，配合getViewModelWithSavedStateBundle使用

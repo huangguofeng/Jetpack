@@ -45,11 +45,11 @@ public class PermissionUtils {
      * @param ctx Context
      * @return true：禁用自动重置，授权的权限永久拥有，false：启用自动重置，长期不用权限会自动撤销
      */
-    @RequiresApi(api = Build.VERSION_CODES.R)
-    public static boolean isAutoRevokeWhitelisted(Context ctx) {
-        PackageManager pm = ctx.getPackageManager();
-        return pm.isAutoRevokeWhitelisted();
-    }
+//    @RequiresApi(api = Build.VERSION_CODES.R)
+//    public static boolean isAutoRevokeWhitelisted(Context ctx) {
+//        PackageManager pm = ctx.getPackageManager();
+//        return pm.isAutoRevokeWhitelisted();
+//    }
 
     /**
      * 检查应用是否有某个权限

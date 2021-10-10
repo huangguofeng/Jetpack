@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.framework.R;
 import com.example.framework.news.News;
-import com.lib.http.HttpCallback;
 import com.lib.utils.Logger;
 
 import java.util.ArrayList;

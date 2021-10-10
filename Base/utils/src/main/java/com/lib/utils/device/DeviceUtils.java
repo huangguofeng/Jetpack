@@ -44,6 +44,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class DeviceUtils {
     private static final String TAG = "[DeviceUtils]: ";
     private static final String DEVICE_ID = "deviceId";
+    private static final int CPU_COUNT = Runtime.getRuntime().availableProcessors();
 
     /**
      * 各自安卓设备id
@@ -63,6 +64,10 @@ public class DeviceUtils {
     private static String deviceId;
     private static final String DEFAULT_MAC_ADDRESS = "02:00:00:00:00:00";
     private static JSONObject deviceInfo;
+
+    public static int getCpuCount() {
+        return CPU_COUNT;
+    }
 
     /**
      * 获取国家代码

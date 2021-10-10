@@ -10,7 +10,7 @@ import java.util.HashMap;
  * package :com.lib.net
  * desc    :
  */
-public class HttpRetrofitResponse {
+public class RetrofitResponse {
     private String message;
     private int code;
     private HashMap<String, Object> heads;
@@ -98,8 +98,7 @@ public class HttpRetrofitResponse {
         return "HttpRetrofitResponse{" +
                 "message='" + message + '\'' +
                 ", code=" + code +
-                ", heads=" + printHeads(heads) +
-                ", data='" + data + '\'' +
+                ", heads=" + heads +
                 ", isSuccessful=" + isSuccessful +
                 ", errorBody='" + errorBody + '\'' +
                 ", errorBodyType='" + errorBodyType + '\'' +

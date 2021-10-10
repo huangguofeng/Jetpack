@@ -3,7 +3,6 @@ package com.lib.base.view;
 import android.content.Context;
 import android.os.Build;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -13,7 +12,6 @@ import androidx.annotation.RequiresApi;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 
-import com.lib.base.databind.BaseBindingComponent;
 import com.lib.base.server.ICustomView;
 import com.lib.base.viewmodel.BaseViewModel;
 
@@ -51,7 +49,7 @@ public abstract class BaseCustomView<VIEW_MODEL extends BaseViewModel, DATA_BIND
     private void init() {
         LayoutInflater inflater = (LayoutInflater) this.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (getLayoutId() != 0) {
-            data_bind = DataBindingUtil.inflate(inflater, getLayoutId(), this, false, new BaseBindingComponent());
+            data_bind = DataBindingUtil.inflate(inflater, getLayoutId(), this, false);
             data_bind.getRoot().setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {

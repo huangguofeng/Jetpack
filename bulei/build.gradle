@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'com.huawei.agconnect'
+    id 'com.alibaba.arouter'
 }
 
 android {
@@ -75,4 +76,7 @@ dependencies {
 
 
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
+
+    // 路由框架注解处理器
+    annotationProcessor "com.alibaba:arouter-compiler:$rootProject.arouter"
 }

@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.framework.R;
 import com.example.framework.databinding.ListViewItemBinding;
 import com.example.framework.news.News;
-import com.lib.base.databind.BaseBindingComponent;
 
 /**
  * @author huangguofeng

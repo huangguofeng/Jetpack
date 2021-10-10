@@ -4,6 +4,7 @@ buildscript {
     repositories {
         google()
         jcenter()
+        mavenCentral()
         maven { url 'https://jitpack.io' }
         maven { url "https://oss.jfrog.org/libs-snapshot" }
         maven { url 'https://developer.huawei.com/repo/' }
@@ -14,6 +15,7 @@ buildscript {
         // in the individual module build.gradle files
         classpath 'org.greenrobot:greendao-gradle-plugin:3.3.0'
         classpath 'com.huawei.agconnect:agcp:1.5.2.300'
+        classpath "com.alibaba:arouter-register:1.0.2"
     }
 }
 
@@ -21,6 +23,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        mavenCentral()
         maven { url 'https://jitpack.io' }
         maven { url "https://oss.jfrog.org/libs-snapshot" }
         maven { url 'https://developer.huawei.com/repo/' }

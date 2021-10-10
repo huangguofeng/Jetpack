@@ -12,11 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.framework.R;
-import com.example.framework.news.News;
-import com.lib.utils.Logger;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author huangguofeng
@@ -44,34 +39,9 @@ public class MvcActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                newsModel.load(httpCallback);
+                newsModel.load();
             }
         });
     }
-
-    private HttpCallback httpCallback = new HttpCallback() {
-        @Override
-        public void success(int code, Object o) {
-            News news = (News) o;
-            List<News.ResultBean.DataBean> dataBeans = new ArrayList<>();
-            if (news.getResult() != null && news.getResult().getData() != null) {
-                Logger.logDebug("load " + news.getResult().getData().size());
-                for (int i = 0; i < dataBeans.size(); i++) {
-                    Logger.logDebug("load " + dataBeans.toString());
-                }
-                dataBeans = news.getResult().getData();
-                Message message = Message.obtain();
-                message.obj = dataBeans.get(0).title;
-                handler.sendMessage(message);
-            } else {
-                Logger.logError("网络数据错误");
-            }
-        }
-
-        @Override
-        public void fail(int errorCode, String errorMsg) {
-
-        }
-    };
 
 }

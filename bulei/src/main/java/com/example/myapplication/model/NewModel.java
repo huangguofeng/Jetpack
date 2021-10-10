@@ -14,8 +14,8 @@ import com.example.myapplication.vm.TitleViewViewModel;
 import com.lib.base.model.BaseModel;
 import com.lib.base.server.IBaseModelListener;
 import com.lib.base.viewmodel.BaseViewModel;
-import com.lib.http.RetrofitManager;
 import com.lib.http.RetrofitCallback;
+import com.lib.http.RetrofitManager;
 import com.lib.utils.Logger;
 import com.rxjava.rxlife.RxLife;
 
@@ -46,44 +46,7 @@ public class NewModel extends BaseModel {
 
     @Override
     public void load() {
-//        getNews(Constant.API_NEWS, "top", 1, 10, Constant.API_NEWS_TOKEN, new RetrofitCallback<News>() {
-//
-//            @RequiresApi(api = Build.VERSION_CODES.N)
-//            @Override
-//            public void success(Response<News> response) {
-//                News news = response.body();
-//                if(news == null){
-//                    getIBaseModelListener().loadFail(ResultCode.FAIL.value(),"null");
-//                    return;
-//                }
-//
-//                List<BaseViewModel> viewViewModels = new ArrayList<>();
-//                Logger.logInfo( "load " + Thread.currentThread().getName());
-//                Logger.logInfo( "load " + news.toString());
-//
-//
-//                Optional<News> news1 = Optional.of(news);
-//                List<News.ResultBean.DataBean> bean = news1.map(News::getResult)
-//                        .map(News.ResultBean::getData).orElse(null);
-//
-//                if(bean != null && bean.size() != 0){
-//                    bean.forEach(dataBean -> {
-//                        TitleViewViewModel titleViewViewModel = new TitleViewViewModel();
-//                        titleViewViewModel.setDataBean(dataBean);
-//                        viewViewModels.add(titleViewViewModel);
-//                    });
-//                }
-//
-//                getIBaseModelListener().loadSuccess(ResultCode.SUCCESS.value(), viewViewModels);
-//            }
-//
-//            @Override
-//            public void fail(Throwable throwable) {
-//                getIBaseModelListener().loadFail(ResultCode.FAIL.value(), throwable.getMessage());
-//            }
-//        });
-
-//        getNews3(Constant.API_NEWS, "top", 1, 10, Constant.API_NEWS_TOKEN);
+//       getNews3(Constant.API_NEWS, "top", 1, 10, Constant.API_NEWS_TOKEN);
         getNews4(Constant.API_NEWS, "top", 1, 10, Constant.API_NEWS_TOKEN);
     }
 
@@ -98,7 +61,7 @@ public class NewModel extends BaseModel {
     }
 
     protected void getNews2(String baseUrl, String type, int page, int pageSize, String token) {
-        Logger.logDebug( "getNews: baseUrl = " + baseUrl + ", type = " + type + ", page = " + page +
+        Logger.logDebug("getNews: baseUrl = " + baseUrl + ", type = " + type + ", page = " + page +
                 ", pageSize = " + pageSize + ", token = " + token);
 
         INews news = RetrofitManager.get().getRetrofit(baseUrl).create(INews.class);
@@ -112,28 +75,28 @@ public class NewModel extends BaseModel {
 
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
-                        Logger.logDebug("onSubscribe "+ Thread.currentThread().getName());
+                        Logger.logDebug("onSubscribe " + Thread.currentThread().getName());
                     }
 
                     @RequiresApi(api = Build.VERSION_CODES.N)
                     @Override
                     public void onNext(News news) {
-                        Logger.logDebug("onNext "+ Thread.currentThread().getName());
-                        if(news == null){
-                            getIBaseModelListener().loadFail(ResultCode.FAIL.value(),"null");
+                        Logger.logDebug("onNext " + Thread.currentThread().getName());
+                        if (news == null) {
+                            getIBaseModelListener().loadFail(ResultCode.FAIL.value(), "null");
                             return;
                         }
 
                         List<BaseViewModel> viewViewModels = new ArrayList<>();
-                        Logger.logInfo( "load " + Thread.currentThread().getName());
-                        Logger.logInfo( "load " + news.toString());
+                        Logger.logInfo("load " + Thread.currentThread().getName());
+                        Logger.logInfo("load " + news.toString());
 
 
                         Optional<News> news1 = Optional.of(news);
                         List<News.ResultBean.DataBean> bean = news1.map(News::getResult)
                                 .map(News.ResultBean::getData).orElse(null);
 
-                        if(bean != null && bean.size() != 0){
+                        if (bean != null && bean.size() != 0) {
                             bean.forEach(dataBean -> {
                                 TitleViewViewModel titleViewViewModel = new TitleViewViewModel();
                                 titleViewViewModel.setDataBean(dataBean);
@@ -146,18 +109,18 @@ public class NewModel extends BaseModel {
 
                     @Override
                     public void onError(Throwable t) {
-                        Logger.logDebug("onError "+ Thread.currentThread().getName());
+                        Logger.logDebug("onError " + Thread.currentThread().getName());
                     }
 
                     @Override
                     public void onComplete() {
-                        Logger.logDebug("onComplete "+ Thread.currentThread().getName());
+                        Logger.logDebug("onComplete " + Thread.currentThread().getName());
                     }
                 });
     }
 
     protected void getNews3(String baseUrl, String type, int page, int pageSize, String token) {
-        Logger.logDebug( "getNews: baseUrl = " + baseUrl + ", type = " + type + ", page = " + page +
+        Logger.logDebug("getNews: baseUrl = " + baseUrl + ", type = " + type + ", page = " + page +
                 ", pageSize = " + pageSize + ", token = " + token);
 
         INews news = RetrofitManager.get().getRetrofit(baseUrl).create(INews.class);
@@ -170,44 +133,44 @@ public class NewModel extends BaseModel {
 
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
-                        Logger.logDebug("onSubscribe "+ Thread.currentThread().getName());
+                        Logger.logDebug("onSubscribe " + Thread.currentThread().getName());
                     }
 
                     @RequiresApi(api = Build.VERSION_CODES.N)
                     @Override
                     public void onNext(BaseResponse<News.ResultBean> response) {
-                        Logger.logDebug("onNext "+ Thread.currentThread().getName());
-                        Logger.logDebug("onNext "+ response.getError_code());
+                        Logger.logDebug("onNext " + Thread.currentThread().getName());
+                        Logger.logDebug("onNext " + response.getError_code());
                         success(response.getResult());
                     }
 
                     @Override
                     public void onError(Throwable t) {
-                        Logger.logDebug("onError "+ Thread.currentThread().getName());
+                        Logger.logDebug("onError " + Thread.currentThread().getName());
                     }
 
                     @Override
                     public void onComplete() {
-                        Logger.logDebug("onComplete "+ Thread.currentThread().getName());
+                        Logger.logDebug("onComplete " + Thread.currentThread().getName());
                     }
                 });
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public void success(News.ResultBean resultBean){
-        if(resultBean == null){
-            getIBaseModelListener().loadFail(-1,"null");
+    public void success(News.ResultBean resultBean) {
+        if (resultBean == null) {
+            getIBaseModelListener().loadFail(-1, "null");
             return;
         }
 
         List<BaseViewModel> viewViewModels = new ArrayList<>();
-        Logger.logInfo( "load " + Thread.currentThread().getName());
+        Logger.logInfo("load " + Thread.currentThread().getName());
 
         Optional<News.ResultBean> news1 = Optional.of(resultBean);
         List<News.ResultBean.DataBean> bean = news1.map(News.ResultBean::getData)
                 .orElse(null);
 
-        if(bean != null && bean.size() != 0){
+        if (bean != null && bean.size() != 0) {
             bean.forEach(dataBean -> {
                 TitleViewViewModel titleViewViewModel = new TitleViewViewModel();
                 titleViewViewModel.setDataBean(dataBean);
@@ -219,7 +182,7 @@ public class NewModel extends BaseModel {
     }
 
     protected void getNews4(String baseUrl, String type, int page, int pageSize, String token) {
-        Logger.logDebug( "getNews: baseUrl = " + baseUrl + ", type = " + type + ", page = " + page +
+        Logger.logDebug("getNews: baseUrl = " + baseUrl + ", type = " + type + ", page = " + page +
                 ", pageSize = " + pageSize + ", token = " + token);
 
         INews news = RetrofitManager.get().getRetrofit(baseUrl).create(INews.class);
@@ -232,25 +195,25 @@ public class NewModel extends BaseModel {
 
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
-                        Logger.logDebug("onSubscribe "+ Thread.currentThread().getName());
+                        Logger.logDebug("onSubscribe " + Thread.currentThread().getName());
                     }
 
                     @RequiresApi(api = Build.VERSION_CODES.N)
                     @Override
                     public void onNext(Response<News> response) {
-                        Logger.logDebug("onNext "+ Thread.currentThread().getName());
+                        Logger.logDebug("onNext " + Thread.currentThread().getName());
                         RetrofitUtils.logResponse(response);
                         success(response.body().getResult());
                     }
 
                     @Override
                     public void onError(Throwable t) {
-                        Logger.logDebug("onError "+ Thread.currentThread().getName());
+                        Logger.logDebug("onError " + Thread.currentThread().getName());
                     }
 
                     @Override
                     public void onComplete() {
-                        Logger.logDebug("onComplete "+ Thread.currentThread().getName());
+                        Logger.logDebug("onComplete " + Thread.currentThread().getName());
                     }
                 });
     }

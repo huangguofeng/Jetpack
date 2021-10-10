@@ -1,11 +1,11 @@
 rootProject.name = 'Jetpack'
 
-include 'Demo:app'
-include 'Demo:appDemo'
+//include 'Demo:app'
+//include 'Demo:appDemo'
 //include 'Demo:appRoomDemo'
-include ':javaLib'
-include 'Demo:androidbase'
-include 'Demo:androidFramework'
+//include ':javaLib'
+//include 'Demo:androidbase'
+//include 'Demo:androidFramework'
 include ':bulei'
 
 /**

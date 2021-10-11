@@ -40,6 +40,7 @@ task clean(type: Delete) {
 
 ext {
     module = [
+            home  : project(':bulei-home'),
             base  : project(':Base:base'),
             common: project(':Base:common'),
             http  : project(':Base:http'),

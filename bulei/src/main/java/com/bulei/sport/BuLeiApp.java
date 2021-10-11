@@ -28,4 +28,9 @@ public class BuLeiApp extends BaseApplication {
             e.printStackTrace();
         }
     }
+
+    @Override
+    protected boolean isDebug() {
+        return true;
+    }
 }

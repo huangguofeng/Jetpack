@@ -1,0 +1,50 @@
+Observable.create((ObservableOnSubscribe<String>) emitter -> {
+            Logger.logDebug(Thread.currentThread().getName());
+            emitter.onNext("huang");
+            emitter.onComplete();
+        }).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new io.reactivex.rxjava3.core.Observer<String>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+                        Logger.logDebug("onSubscribe " + Thread.currentThread().getName());
+                    }
+
+                    @Override
+                    public void onNext(@NonNull String s) {
+                        Logger.logInfo(s);
+                        Logger.logDebug("onNext " + Thread.currentThread().getName());
+                    }
+
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        Logger.logDebug("onComplete " + Thread.currentThread().getName());
+                    }
+                });
+
+        RxView.clicks(getViewBind().init).throttleFirst(1, TimeUnit.SECONDS)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(obj -> {
+//                    MmKvUtil.put("loginResult",false);
+                    startActivity(new Intent(Main2Activity.this, AiLiveActivity.class));
+                });
+        List<Integer> list = Arrays.asList(1, 2, 3, 4, 7, 8, 0);
+        list.stream()
+                .filter(integer -> integer % 2 == 0)
+                .map(integer -> integer.toString() + ":apply")
+                .forEach(s -> Logger.logDebug(Thread.currentThread().getName() + " : " + s));
+
+        List<Integer> list2 = Arrays.asList(1, 2, 3, 4, 7, 8, 0);
+        Observable<List<Integer>> observable = Observable.just(list2);
+        observable.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(integers -> Logger.logDebug(Thread.currentThread().getName() + " : " + integers.size()));
+
+        observable.observeOn(Schedulers.io()).subscribe(integers -> Logger.logDebug(Thread.currentThread().getName() + " : " + integers.size()));
+    }

@@ -7,21 +7,18 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-import androidx.databinding.ViewDataBinding;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.SavedStateViewModelFactory;
-import androidx.lifecycle.ViewModelProvider;
 
+import com.lib.base.R;
 import com.lib.base.utils.ActivityUtils;
-import com.lib.base.viewmodel.BaseViewModel;
 
 /**
  * @author :huangguofeng
@@ -36,14 +33,16 @@ public abstract class BasicActivity extends AppCompatActivity {
     protected Activity mActivity;
     protected final static String BUNDLE_DEFAULT = "isDefault";
 
-    public Handler handler = new Handler(Looper.getMainLooper()){
+    public Handler handler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(@NonNull Message msg) {
             handlerMsg(msg);
         }
     };
 
-    protected void handlerMsg(Message msg){ }
+    protected void handlerMsg(Message msg) {
+    }
+
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(newBase);
@@ -53,14 +52,14 @@ public abstract class BasicActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mActivity = this;
-        ActivityUtils.get().add(getClass().getName(),this);
+        ActivityUtils.get().add(getClass().getName(), this);
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
-        if(getIntent() != null && getIntent().getExtras() != null){
+        if (getIntent() != null && getIntent().getExtras() != null) {
             defaultBundle = getIntent().getExtras();
-        }else{
+        } else {
             defaultBundle = new Bundle();
-            defaultBundle.putBoolean(BUNDLE_DEFAULT,true);
+            defaultBundle.putBoolean(BUNDLE_DEFAULT, true);
         }
     }
 
@@ -68,7 +67,7 @@ public abstract class BasicActivity extends AppCompatActivity {
         return fragmentManager;
     }
 
-    protected FragmentTransaction getFt(){
+    protected FragmentTransaction getFt() {
         return fragmentTransaction;
     }
 
@@ -102,7 +101,27 @@ public abstract class BasicActivity extends AppCompatActivity {
         }
     }
 
-    protected boolean isFullScreen(){
+    protected boolean isFullScreen() {
         return false;
+    }
+
+    long preTime;
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            long currentTime = System.currentTimeMillis();
+            // 如果时间间隔大于2秒，不处理
+            if ((currentTime - preTime) > 2000) {
+                // 显示消息
+                Toast.makeText(this, getString(R.string.toast_tip_exit), Toast.LENGTH_SHORT).show();
+                //更新时间
+                preTime = currentTime;
+                //截获事件，不再处理
+                return true;
+            }
+            System.exit(0);
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

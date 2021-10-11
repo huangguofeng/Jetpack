@@ -1,7 +1,6 @@
 package com.bulei.sport.ui.activity;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Message;
@@ -11,20 +10,19 @@ import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.bulei.sport.R;
 import com.bulei.sport.databinding.ActivityWelcomeBinding;
+import com.bulei.sport.ui.MainPath;
 import com.bulei.sport.viewmodel.LoginViewModel;
 import com.bumptech.glide.Glide;
-import com.example.myapplication.Main2Activity;
 import com.lib.base.ui.BaseViewModelActivity;
 import com.lib.base.utils.ActivityUtils;
+import com.lib.common.utils.InputUtils;
 import com.lib.utils.Logger;
 import com.lib.utils.check.CheckUtils;
-
-import java.util.Date;
 
 import jp.wasabeef.glide.transformations.BlurTransformation;
 
@@ -49,9 +47,12 @@ public class WelcomeActivity extends BaseViewModelActivity<LoginViewModel> imple
         binding.loginInputPassword.setOnFocusChangeListener(this);
         binding.loginInputVerifyCode.setOnFocusChangeListener(this);
 
-        binding.loginInputPhone.setOnKeyListener((v, keyCode, event) -> onKey(binding.loginInputPhone, event, keyCode));
-        binding.loginInputPassword.setOnKeyListener((v, keyCode, event) -> onKey(binding.loginInputPassword, event, keyCode));
-        binding.loginInputVerifyCode.setOnKeyListener((v, keyCode, event) -> onKey(binding.loginInputVerifyCode, event, keyCode));
+        binding.loginInputPhone.setOnKeyListener((v, keyCode, event) ->
+                InputUtils.getUtils().onKey(binding.loginInputPhone, event, keyCode));
+        binding.loginInputPassword.setOnKeyListener((v, keyCode, event) ->
+                InputUtils.getUtils().onKey(binding.loginInputPassword, event, keyCode));
+        binding.loginInputVerifyCode.setOnKeyListener((v, keyCode, event) ->
+                InputUtils.getUtils().onKey(binding.loginInputVerifyCode, event, keyCode));
 
         binding.loginInputPhone.addTextChangedListener(new TextWatcher() {
             @Override
@@ -351,12 +352,6 @@ public class WelcomeActivity extends BaseViewModelActivity<LoginViewModel> imple
         changeBg(false);
     }
 
-    private void closeInputMethod() {
-        InputMethodManager inputMethodManager =
-                (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-
-    }
-
     private void changeState() {
         Logger.logInfo(getViewModel().loginState + "  ");
         switch (getViewModel().loginState) {
@@ -454,26 +449,7 @@ public class WelcomeActivity extends BaseViewModelActivity<LoginViewModel> imple
         binding.loginBgFocus.setVisibility(focus ? View.VISIBLE : View.GONE);
         binding.loginBg.setVisibility(focus ? View.GONE : View.VISIBLE);
     }
-
-    private void changeButtonBg() {
-        if (getViewModel().loginState == 0) {
-            binding.loginGetVerifyCode.setClickable(false);
-            binding.loginGetVerifyCode.setBackgroundResource(R.drawable.login_button_yellow);
-        }
-        if (getViewModel().loginState == 1) {
-            if (passwordLength >= 6 && passwordLength <= 16) {
-                binding.loginLogin.setClickable(false);
-                binding.loginLogin.setBackgroundResource(R.drawable.login_button_yellow);
-            }
-        }
-        if (getViewModel().loginState == 2) {
-            if (passwordLength >= 6 && passwordLength <= 16 && verifyCodeLength == 4) {
-                binding.loginRegister.setClickable(false);
-                binding.loginRegister.setBackgroundResource(R.drawable.login_button_yellow);
-            }
-        }
-    }
-
+    
     /**
      * 跳转到忘记密码或者验证码输入界面
      *
@@ -481,24 +457,19 @@ public class WelcomeActivity extends BaseViewModelActivity<LoginViewModel> imple
      */
     private void forgetPassword(int type) {
         Logger.logDebug("获取验证码=1,忘记密码=2, 本次type = " + type);
-        Intent intent = null;
         if (type == 1) {
-            intent = new Intent(this, VerifyCodeActivity.class);
+            ARouter.getInstance().build(MainPath.MAIN_VERIFY).withInt("type", type).withString("phone",
+                    binding.loginInputPhone.getText().toString()).navigation();
         } else {
-            intent = new Intent(this, ForgetActivity.class);
+            ARouter.getInstance().build(MainPath.MAIN_FORGET).withInt("type", type).withString("phone",
+                    binding.loginInputPhone.getText().toString()).navigation();
         }
-        intent.putExtra("type", type);
-        intent.putExtra("phone", binding.loginInputPhone.getText().toString());
-
-        startActivity(intent);
     }
 
     private void loginSuccess() {
-        startActivity(new Intent(this, Main2Activity.class));
+        ARouter.getInstance().build(MainPath.MAIN_HOME).navigation();
         ActivityUtils.get().removeAll();
     }
-
-    long preTime;
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -506,18 +477,7 @@ public class WelcomeActivity extends BaseViewModelActivity<LoginViewModel> imple
             if (back()) {
                 return true;
             }
-            long currentTime = new Date().getTime();
-            // 如果时间间隔大于2秒，不处理
-            if ((currentTime - preTime) > 2000) {
-                // 显示消息
-                Toast.makeText(this, getString(R.string.toast_tip_exit), Toast.LENGTH_SHORT).show();
-                //更新时间
-                preTime = currentTime;
-                //截获事件，不再处理
-                return true;
-            }
         }
-        System.exit(0);
         return super.onKeyDown(keyCode, event);
     }
 
@@ -525,33 +485,6 @@ public class WelcomeActivity extends BaseViewModelActivity<LoginViewModel> imple
         if (getViewModel().loginState != 0) {
             getViewModel().loginState = 0;
             changeState();
-            return true;
-        }
-        return false;
-    }
-
-    public boolean onKey(EditText editText, KeyEvent event, int keyCode) {
-//        Logger.logInfo("键盘事件："+keyCode+"  event: "+event.getAction());
-        if (keyCode == KeyEvent.KEYCODE_DEL && event.getAction() == KeyEvent.ACTION_DOWN) {
-            //获取当前editText中的内容
-            String text = editText.getText().toString();
-            //判断text中是否有内容
-            if (0 < text.length()) {
-                //判断text中是否只有一个字符
-                if (0 == text.length() - 1) {
-                    //如果只有一个则直接令editText为""，即none
-                    editText.setText("");
-                    //将焦点置于第0位，即最开始
-                    editText.setSelection(0);
-                } else {
-                    //否则删除该字段的最后一个字符并将删除后的结果赋予newText
-                    String newText = text.substring(0, text.length() - 1);
-                    //显示newText中的内容
-                    editText.setText(newText);
-                    //设置焦点在该字段最后
-                    editText.setSelection(newText.length());
-                }
-            }
             return true;
         }
         return false;

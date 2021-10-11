@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bulei.home">
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="29" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.sensor.stepcounter" />
+    <uses-feature android:name="feature:android.hardware.sensor.stepdetector" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 身体活动识别权限 -->
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" /> <!-- 身体传感器权限 -->
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application>
+        <activity
+            android:name="com.example.myapplication.Main2Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.bulei.sport.ui.activity.AiLiveActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+    </application>
+
+</manifest>

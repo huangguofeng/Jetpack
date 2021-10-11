@@ -1,19 +1,22 @@
 package com.bulei.sport.ui.activity;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.bulei.sport.R;
 import com.bulei.sport.databinding.ActivityForgetBinding;
-import com.bulei.sport.ui.callback.EditTextTextWatcher;
-import com.bulei.sport.utils.InputUtils;
+import com.bulei.sport.ui.MainPath;
 import com.lib.base.ui.BasicActivity;
+import com.lib.common.ui.EditTextTextWatcher;
+import com.lib.common.utils.InputUtils;
 import com.lib.utils.Logger;
 import com.lib.utils.check.CheckUtils;
 
 @SuppressLint("SetTextI18n")
+@Route(path = MainPath.MAIN_FORGET)
 public class ForgetActivity extends BasicActivity {
     int type;
     String phone;
@@ -75,10 +78,8 @@ public class ForgetActivity extends BasicActivity {
             Toast.makeText(this, "手机号格式错误，请检查", Toast.LENGTH_SHORT).show();
             return;
         }
-        Intent intent = new Intent(this, VerifyCodeActivity.class);
-        intent.putExtra("type", type);
-        intent.putExtra("phone", binding.forgetInputPhone.getText().toString());
-        startActivity(intent);
+        ARouter.getInstance().build(MainPath.MAIN_VERIFY).withInt("type", type).withString("phone",
+                binding.forgetInputPhone.getText().toString()).navigation();
     }
 
 }

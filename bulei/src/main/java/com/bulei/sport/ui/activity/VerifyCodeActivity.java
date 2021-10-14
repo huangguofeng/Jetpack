@@ -16,6 +16,9 @@ import com.lib.common.utils.InputUtils;
 import com.lib.utils.Logger;
 import com.lib.utils.file.MmKvUtil;
 
+/**
+ * @author huangguofeng
+ */
 @SuppressLint("SetTextI18n")
 @Route(path = MainPath.MAIN_VERIFY)
 public class VerifyCodeActivity extends BasicActivity {
@@ -28,6 +31,7 @@ public class VerifyCodeActivity extends BasicActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityVerifyCodeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        ARouter.getInstance().inject(this);
         parseBundle();
         initView();
         ActivityUtils.get().print();

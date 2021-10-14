@@ -28,7 +28,6 @@ import com.lib.base.utils.ActivityUtils;
  */
 public abstract class BasicActivity extends AppCompatActivity {
     FragmentManager fragmentManager;
-    FragmentTransaction fragmentTransaction;
     Bundle defaultBundle = null;
     protected Activity mActivity;
     protected final static String BUNDLE_DEFAULT = "isDefault";
@@ -54,7 +53,7 @@ public abstract class BasicActivity extends AppCompatActivity {
         mActivity = this;
         ActivityUtils.get().add(getClass().getName(), this);
         fragmentManager = getSupportFragmentManager();
-        fragmentTransaction = fragmentManager.beginTransaction();
+
         if (getIntent() != null && getIntent().getExtras() != null) {
             defaultBundle = getIntent().getExtras();
         } else {
@@ -68,7 +67,7 @@ public abstract class BasicActivity extends AppCompatActivity {
     }
 
     protected FragmentTransaction getFt() {
-        return fragmentTransaction;
+        return fragmentManager.beginTransaction();
     }
 
     /**

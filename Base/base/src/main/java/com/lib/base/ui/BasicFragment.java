@@ -1,6 +1,5 @@
 package com.lib.base.ui;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,10 +8,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.SavedStateViewModelFactory;
-import androidx.lifecycle.ViewModelProvider;
-
-import com.lib.base.viewmodel.BaseViewModel;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 /**
  * @author :huangguofeng
@@ -23,15 +20,17 @@ import com.lib.base.viewmodel.BaseViewModel;
 public abstract class BasicFragment extends Fragment {
     Bundle defaultBundle = null;
     protected final static String BUNDLE_DEFAULT_FRAGMENT = "isDefault_fragment";
+    FragmentManager fm;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        fm = getChildFragmentManager();
         if (getArguments() != null) {
             defaultBundle = getArguments();
-        }else {
+        } else {
             defaultBundle = new Bundle();
-            defaultBundle.putBoolean(BUNDLE_DEFAULT_FRAGMENT,true);
+            defaultBundle.putBoolean(BUNDLE_DEFAULT_FRAGMENT, true);
         }
     }
 
@@ -48,7 +47,7 @@ public abstract class BasicFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(getLayoutId(),container,false);
+        return inflater.inflate(getLayoutId(), container, false);
     }
 
     /**
@@ -65,5 +64,13 @@ public abstract class BasicFragment extends Fragment {
      */
     protected Bundle getBundle() {
         return defaultBundle;
+    }
+
+    protected FragmentManager getChildFm() {
+        return fm;
+    }
+
+    protected FragmentTransaction getChildFt() {
+        return fm.beginTransaction();
     }
 }

@@ -22,12 +22,7 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application>
-        <activity
-            android:name="com.example.myapplication.Main2Activity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name="com.bulei.sport.ui.activity.AiLiveActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
     </application>
 
 </manifest>

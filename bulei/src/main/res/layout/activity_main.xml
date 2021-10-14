@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_tm"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.activity.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/main_fg"
+        android:layout_above="@+id/navi_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <!--底部按钮-->
+    <LinearLayout
+        android:id="@+id/navi_ll"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/navi_home"
+            android:text="首页"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/navi_match"
+            android:text="赛事"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:padding="5dp"
+            android:id="@+id/navi_camera"
+            android:src="@mipmap/paishe"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/navi_sport"
+            android:text="运动"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/navi_my"
+            android:text="我的"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+</RelativeLayout>

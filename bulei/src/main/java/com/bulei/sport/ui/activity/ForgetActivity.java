@@ -15,6 +15,9 @@ import com.lib.common.utils.InputUtils;
 import com.lib.utils.Logger;
 import com.lib.utils.check.CheckUtils;
 
+/**
+ * @author huangguofeng
+ */
 @SuppressLint("SetTextI18n")
 @Route(path = MainPath.MAIN_FORGET)
 public class ForgetActivity extends BasicActivity {
@@ -27,6 +30,7 @@ public class ForgetActivity extends BasicActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityForgetBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        ARouter.getInstance().inject(this);
         parseBundle();
         initView();
     }

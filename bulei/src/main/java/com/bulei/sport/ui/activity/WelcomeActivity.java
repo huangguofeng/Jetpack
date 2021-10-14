@@ -36,6 +36,7 @@ public class WelcomeActivity extends BaseViewModelActivity<LoginViewModel> imple
         super.onCreate(savedInstanceState);
         binding = ActivityWelcomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        ARouter.getInstance().inject(this);
         getViewModel().loginResult.observe(this, aBoolean -> {
             Logger.logInfo("观察到登录结果变化了：是否登录：" + aBoolean);
             if (aBoolean) {
@@ -449,7 +450,7 @@ public class WelcomeActivity extends BaseViewModelActivity<LoginViewModel> imple
         binding.loginBgFocus.setVisibility(focus ? View.VISIBLE : View.GONE);
         binding.loginBg.setVisibility(focus ? View.GONE : View.VISIBLE);
     }
-    
+
     /**
      * 跳转到忘记密码或者验证码输入界面
      *
